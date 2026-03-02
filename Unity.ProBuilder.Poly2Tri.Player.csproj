@@ -10,10 +10,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{AE3C0B43-0173-ED70-F2A2-A97040BD965F}</ProjectGuid>
+    <ProjectGuid>{FA2CBFF8-7223-ECB1-8F94-471F05B4D76D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Unity.ProBuilder.Poly2Tri</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -61,11 +61,40 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerManager.cs" />
-    <Compile Include="Assets\InputSystem\InputManager.cs" />
-    <Compile Include="Assets\InputSystem\PlayerControls.cs" />
-    <Compile Include="Assets\Scripts\PlayerMotor.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\TriangulationContext.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\DelaunayTriangle.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\DTSweep.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\AdvancingFront.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Utility\FixedArray3.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Util\PolygonGenerator.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Util\PointGenerator.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Polygon\Polygon.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\DTSweepDebugContext.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\TriangulationDebugContext.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Sets\PointSet.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\TriangulationAlgorithm.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\DTSweepConstraint.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\PointOnEdgeException.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\TriangulationPoint.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\AdvancingFrontNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\DTSweepBasin.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Sets\ConstrainedPointSet.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\DTSweepEdgeEvent.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\P2T.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\TriangulationMode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Polygon\PolygonSet.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Utility\FixedBitArray3.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\ITriangulatable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\TriangulationConstraint.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Orientation.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Polygon\PolygonPoint.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\DTSweepContext.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\TriangulationUtil.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Triangulation\Delaunay\Sweep\DTSweepPointComparator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\External\Poly2Tri\Unity.ProBuilder.Poly2Tri.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -894,117 +923,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{5ECF7E9B-0A40-416E-1DA5-D613C0AD3E13}</Project>
-      <Name>Unity.TextMeshPro.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
-      <Project>{46806997-161C-CA3A-15CA-03FB16A19C9B}</Project>
-      <Name>Unity.AI.Navigation.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj">
-      <Project>{FC2DD07F-DC31-BA39-EC11-4C18C4C042CA}</Project>
-      <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{1811FCEF-4135-91BE-879C-8003E056BF9F}</Project>
-      <Name>Unity.Timeline.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Shared.Player.csproj">
-      <Project>{86B8BD34-F967-E2B6-4378-D98B9183F9BE}</Project>
-      <Name>Unity.RenderPipelines.Core.Runtime.Shared.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.2D.Runtime.Player.csproj">
-      <Project>{C08AE15B-DDC8-24EC-E3A1-9CECF2362C44}</Project>
-      <Name>Unity.RenderPipelines.Universal.2D.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{D310349B-D6E2-A8D1-5003-BD73B7561361}</Project>
-      <Name>Unity.VisualScripting.Core.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.UnifiedRayTracing.Runtime.Player.csproj">
-      <Project>{8C6C7F80-D344-68B2-E144-2E7F2F7B72B4}</Project>
-      <Name>Unity.UnifiedRayTracing.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Cinemachine.Player.csproj">
-      <Project>{B763FF79-2323-CC9D-4118-193C6560F5A8}</Project>
-      <Name>Unity.Cinemachine.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
-      <Project>{00420D81-E70A-816F-0086-191765177F77}</Project>
-      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Player.csproj">
-      <Project>{4E1D3329-71E9-86AE-8C96-8B7A193CC5CB}</Project>
-      <Name>Unity.RenderPipelines.Core.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{1D581E71-A01D-C83D-13D5-24AEA2DD93F3}</Project>
-      <Name>Unity.VisualScripting.Flow.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Collections.Player.csproj">
-      <Project>{902D6208-FA9D-27B9-CEA3-1B04B3A76F34}</Project>
-      <Name>Unity.Collections.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.ForUI.Player.csproj">
-      <Project>{8D5A2044-7371-6E5E-9FAA-9CE21CFD6246}</Project>
-      <Name>Unity.InputSystem.ForUI.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.GPUDriven.Runtime.Player.csproj">
-      <Project>{135487AC-F7AD-4B45-0439-B45A74A83A28}</Project>
-      <Name>Unity.RenderPipelines.GPUDriven.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Mathematics.Player.csproj">
-      <Project>{3C1A5BDE-FCFE-48E9-BA3E-252B2A3DBA72}</Project>
-      <Name>Unity.Mathematics.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.Player.csproj">
-      <Project>{00917F77-3A7D-2E81-CE2B-18BF67B2F34A}</Project>
-      <Name>Unity.RenderPipelines.Universal.Shaders.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{6AE84676-22D3-5788-7285-5030D0153FE7}</Project>
       <Name>UnityEngine.UI.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Multiplayer.Center.Common.Player.csproj">
-      <Project>{4EEC2FF8-8F52-FE60-C212-34A35FBD5633}</Project>
-      <Name>Unity.Multiplayer.Center.Common.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Burst.Player.csproj">
-      <Project>{B56F4C44-5B1F-5C27-5C2C-121A05333888}</Project>
-      <Name>Unity.Burst.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEngineBridge.004.Player.csproj">
-      <Project>{01C14DFE-1AB8-44F0-2FD2-0B7561B9BECA}</Project>
-      <Name>Unity.InternalAPIEngineBridge.004.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.Player.csproj">
-      <Project>{2DE71090-87F5-9E80-C100-5ED094747C6A}</Project>
-      <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.Player.csproj">
-      <Project>{AE9B714C-ABAD-E809-0D28-A99A2B3D017F}</Project>
-      <Name>Unity.ProBuilder.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{82722D4D-2514-AE36-FD22-A55174856C27}</Project>
-      <Name>Unity.VisualScripting.State.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Config.Runtime.Player.csproj">
-      <Project>{71B67656-7DA6-4DB4-0473-D300167B85B4}</Project>
-      <Name>Unity.RenderPipelines.Universal.Config.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.Player.csproj">
-      <Project>{D25A1CAA-E3EF-C05D-79A0-3A2F2F0F3720}</Project>
-      <Name>Unity.RenderPipeline.Universal.ShaderLibrary.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.Player.csproj">
-      <Project>{C87BB4C5-1DD4-8CAA-8BAE-0389AD45A221}</Project>
-      <Name>Unity.InputSystem.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Splines.Player.csproj">
-      <Project>{4151B195-513A-04BB-75E2-4749820CF022}</Project>
-      <Name>Unity.Splines.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

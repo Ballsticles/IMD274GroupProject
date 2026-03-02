@@ -10,10 +10,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4EB7D199-E861-0EFF-4F4A-E97DDBBAE5BC}</ProjectGuid>
+    <ProjectGuid>{90608D9D-2A7C-DE49-F942-7B7E7F16A9D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>Unity.ProBuilder.Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -61,108 +61,185 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\LogEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\pb_ObjectArray.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\SetPivotToSelection.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MenuToolToggle.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MenuOption.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\FlipFaceEdge.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProbuilderRotateTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\VersionValidator.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectFaceRing.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectFaceLoop.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\MergeFaces.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\VertexManipulationToolSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectVertexColor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderAnalytics.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Export\Export.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MeshDebugTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\SplitVertices.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProbuilderScaleTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectEdgeRing.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EntityEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MeshSelection.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderShapeEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\StateMachines\ShapeState_DrawBaseShape.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectHole.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorMaterialUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ConfigurableWindow.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectSmoothingGroup.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Editors\OpenUVEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\HierarchyListener.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\Experimental.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\CutTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\Version.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\ExtrudeFaces.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\DrawShapeTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\FlipObjectNormals.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\VertexPositionEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorGUIUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Interaction\ToggleSelectBackFaces.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorHandleDrawingScopes.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\PolyShapeEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\TextureRotateTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\BezierSplineEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\IconUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\ProBuilderize.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\SmoothGroupEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\Lightmapping.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\SubdivideEdges.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\LightmapUVEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\GenerateUV2.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\PolyShapeTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\CenterPivot.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\Extrude.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\Model.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\ShrinkSelection.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\BridgeEdges.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorSceneViewPicker.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\OffsetElements.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\UVRenderOptions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Editors\OpenVertexPositionEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\StateMachines\ShapeState_InitShape.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderToolsContexts.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\FreezeTransform.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\SubdivideObject.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Export\ExportStlBinary.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\TriangulateObject.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectRing.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorToolbarLoader.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\UndoUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\TooltipContent.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ReflectionUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\MirrorObjects.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\SetCollider.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MeshAndElementSelection.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Editors\OpenMaterialEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorStyles.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\SceneDragAndDropListener.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\GrowSelection.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\TextureScaleTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\Overlays\SceneInformationOverlay.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderSettingsProvider.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderMeshEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\UnwrapParametersEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorSnapping.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\DestroyListener.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Export\ExportAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MenuAction.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectMaterial.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\PreferencesUpdater.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Editors\OpenVertexColorEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\ConnectVertices.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\VertexColorPalette.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\DuplicateFaces.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\MergeObjects.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\Pref.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\StateMachines\ShapeState_DrawHeightShape.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\IHasPreferences.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ScriptingSymbolManager.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Export\ExportObj.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ObjExporter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\TextureTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\ExtrudeEdges.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\VertexManipulationTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\SmartSubdivide.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProbuilderMoveTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Editors\CutToolAction.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\InsertEdgeLoop.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorMeshUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorEnum.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EntityUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Editors\NewBezierShape.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectEdgeLoop.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorHandleUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\TextureMoveTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\CollapseVertices.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\BooleanEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Export\ExportStlAscii.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\FileUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\DeleteFaces.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProGridsInterface.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\StateMachines\ShapeState.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\PositionTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\DetachFaces.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderMenuActionAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\UVEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\SetTrigger.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ShapeMenuItems.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Interaction\ToggleXRay.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\VertexOnFaceEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\HandleGUI.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\Overlays\SelectionSettingsButtons.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\RepairActions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\Overlays\ActionSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorGUILayout.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ToolbarGroup.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\SmartConnect.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EntityVisibility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Export\ExportPly.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Interaction\ToggleHandleOrientation.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MaterialEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderEditorShortcuts.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorShapeUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\ConformFaceNormals.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Editors\OpenSmoothingEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\PreferencesInternal.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Selection\SelectLoop.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\PlyExporter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Interaction\ToggleDragRectMode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\FlipFaceNormals.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\UnityScenePostProcessor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Editors\OpenLightmapUVEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\AutoUVEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\FillHole.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\PreferenceDictionaryEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\LicenseEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ProBuilderMeshPreview.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\DimensionsEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorHandleDrawing.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\ConformObjectNormals.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\BevelEdges.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\WeldVertices.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorPathSelectionUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ContextClickManipulator.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MenuItems.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\ConnectEdges.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\SelectionUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\SubdivideFaces.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\StripProBuilderScripts.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditShapeTool.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Geometry\TriangulateFaces.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\TooltipEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\MaterialPalette.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\EditorToolbarMenuItems.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm-help.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\images.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\i3.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\guihelp.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\workspaceserver.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\commontypes.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\semantic.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\plastic-gui.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\differences.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\semantic.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\semantic.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\clientcommon.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\configurehelper.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\xdiff.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\workspaceserver.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\commontypes.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\semantic.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\xdiff.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\basecommands.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\workspaceserver.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\xdiff.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\clientcommon.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm-help.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\guihelp.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\configurehelper.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\clientcommon.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\plastic-gui.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\commontypes.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\differences.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm-help.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\commontypes.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\images.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\mergetool.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\mergetool.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\commontypes.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\plastic-gui.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\basecommands.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\images.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\images.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\differences.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\differences.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\plastic-gui.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\log4netPlastic.dll" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\lz4x64Plastic.dll" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\guihelp.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\clientcommon.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\plastic-gui.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\configurehelper.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\plastic-gui.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\xdiff.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm-help.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\workspaceserver.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\semantic.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\unityplastic.dll" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\i3.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\images.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\guihelp.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\mergetool.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\configurehelper.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\common.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\clientcommon.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\mergetool.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\FileSystemWatcherLicense.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\images.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\mergetool.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\basecommands.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\guihelp.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\guihelp.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\workspaceserver.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\workspaceserver.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\basecommands.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\i3.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\i3.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\mergetool.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\basecommands.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\configurehelper.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\xdiff.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\i3.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\clientcommon.zh-Hans.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\configurehelper.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\xdiff.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\common.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\i3.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\semantic.en.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm-help.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\differences.zh-Hant.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\commontypes.ko.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\basecommands.ja.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\zlib64Plastic.dll" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\cm-help.es.txt" />
-    <None Include="Library\PackageCache\com.unity.collab-proxy@e566cd3e7623\Lib\Editor\Localization\differences.ja.txt" />
+    <None Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\Unity.ProBuilder.Editor.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1291,9 +1368,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{2D49ADC9-A380-E2B9-9730-A9872D82106F}</Project>
-      <Name>Assembly-CSharp</Name>
+    <ProjectReference Include="Unity.ProBuilder.csproj">
+      <Project>{1C3763CA-6515-582B-2EFB-5F6B32207DAD}</Project>
+      <Name>Unity.ProBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
+      <Project>{91AB2FDB-682D-07AD-AA1A-DC935A4F699D}</Project>
+      <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Stl.csproj">
+      <Project>{810CFF1E-FB4B-72E5-6664-B65A9C9F235A}</Project>
+      <Name>Unity.ProBuilder.Stl</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Settings.Editor.csproj">
+      <Project>{369BFB66-E678-214E-92DE-68269F63D21A}</Project>
+      <Name>Unity.Settings.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Csg.csproj">
+      <Project>{459538D5-53C5-43A2-157D-FF18F5E50F3D}</Project>
+      <Name>Unity.ProBuilder.Csg</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{23ECA631-38AD-F35F-620A-9E13DCB98EE6}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{A86ABA3E-61DC-A502-9F29-B714A490E23F}</Project>
+      <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{6F70F1D2-EB04-15F0-5159-8058AC00F079}</Project>
@@ -1302,250 +1403,6 @@
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
       <Project>{16762010-CA7F-707E-FEA1-6346EE6F5674}</Project>
       <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
-      <Project>{EB80AE43-6582-C5A7-0D4D-B1238C9C877E}</Project>
-      <Name>Unity.RenderPipelines.Core.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.Analytics.csproj">
-      <Project>{457F98E9-C24E-DC88-A5E9-2B0098DC77D7}</Project>
-      <Name>UnityEditor.UI.Analytics</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{9D634A56-C764-E399-3C01-821EB8018077}</Project>
-      <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Rendering.LightTransport.Editor.csproj">
-      <Project>{4B4DA8E8-1D9C-87F4-CE44-49CAF3DBB250}</Project>
-      <Name>Unity.Rendering.LightTransport.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.csproj">
-      <Project>{09D8D874-8C8D-5FF6-1C37-E850AAFE6925}</Project>
-      <Name>Unity.AI.Navigation</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
-      <Project>{8DCE11C7-3FD2-1199-BCDB-298C3D27605E}</Project>
-      <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
-      <Project>{DD71FADB-5371-CE8E-E8B4-2020B23EF223}</Project>
-      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Splines.Editor.csproj">
-      <Project>{CDAAEC96-7489-97D2-BA1E-E6B34BAB730D}</Project>
-      <Name>Unity.Splines.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.2D.Editor.Overrides.csproj">
-      <Project>{0472B2A9-1263-148D-467D-43223EE78E62}</Project>
-      <Name>Unity.RenderPipelines.Universal.2D.Editor.Overrides</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
-      <Project>{3096BE5D-FBB8-58EF-AEBE-5B5AE96FB75A}</Project>
-      <Name>Unity.RenderPipelines.Universal.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
-      <Project>{1AE74FF9-3AFF-3FEE-A41B-7CD3A0F8E8B3}</Project>
-      <Name>Unity.AI.Navigation.Updater</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{E683E4EC-4C1D-3EC9-40FD-5AFC09442389}</Project>
-      <Name>Unity.Timeline</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
-      <Project>{551CCC7A-2C60-8E38-708F-D79D9E03EF97}</Project>
-      <Name>Unity.AI.Navigation.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PPv2URPConverters.csproj">
-      <Project>{D7E19BFE-85A2-5CD5-AB03-CF88262AC405}</Project>
-      <Name>PPv2URPConverters</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Shared.csproj">
-      <Project>{659042CE-CD2C-6C69-C66B-8BB97AE75904}</Project>
-      <Name>Unity.RenderPipelines.Core.Runtime.Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.2D.Runtime.csproj">
-      <Project>{936B42A8-0AAA-404A-0B93-D18F2926DCED}</Project>
-      <Name>Unity.RenderPipelines.Universal.2D.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
-      <Project>{17971644-DDF9-09EC-0951-CE728C52E256}</Project>
-      <Name>Unity.VisualScripting.Shared.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Searcher.Editor.csproj">
-      <Project>{A67B4179-FAD6-9DC1-8DCF-D66A41633728}</Project>
-      <Name>Unity.Searcher.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{201210CC-2F01-365C-C59E-3AFC4DB60F2B}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Burst.Editor.csproj">
-      <Project>{E5938862-4C72-7418-6098-1EC47220F6F2}</Project>
-      <Name>Unity.Burst.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.csproj">
-      <Project>{386023C2-FB5D-114D-5DE0-BACE7083A13F}</Project>
-      <Name>Unity.VisualScripting.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
-      <Project>{6D2EC696-EA14-91F7-995A-A8E11AC81802}</Project>
-      <Name>Unity.Mathematics.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Cinemachine.Editor.csproj">
-      <Project>{8F169D7B-EA8C-7933-63A4-33083ACBBF9B}</Project>
-      <Name>Unity.Cinemachine.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.UnifiedRayTracing.Runtime.csproj">
-      <Project>{5DCB2371-2FF4-FD7A-981E-7C18886FFFC8}</Project>
-      <Name>Unity.UnifiedRayTracing.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Cinemachine.csproj">
-      <Project>{E825ACA0-EB3B-1E11-368E-CC25D35356C0}</Project>
-      <Name>Unity.Cinemachine</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{3BF9DB47-2DA6-5F12-513D-BD83B4764956}</Project>
-      <Name>Unity.Rider.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj">
-      <Project>{0FA53D36-1889-5C10-2445-3C5210BE01D0}</Project>
-      <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
-      <Project>{425AC49F-9498-6A1A-A27E-EC0B57740762}</Project>
-      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
-      <Project>{955DD535-19A5-5546-EC9B-E84E2FC5DFD2}</Project>
-      <Name>Unity.RenderPipelines.Core.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
-      <Project>{96DD56A9-92D8-9E29-AA8D-18DA38C68747}</Project>
-      <Name>Unity.VisualScripting.Flow</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.Editor.csproj">
-      <Project>{90608D9D-2A7C-DE49-F942-7B7E7F16A9D3}</Project>
-      <Name>Unity.ProBuilder.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{94F5C507-F432-7B71-9758-336669336079}</Project>
-      <Name>Unity.TextMeshPro.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
-      <Project>{9536E6F1-6FF2-8CB4-77F5-2E1A2D148D0B}</Project>
-      <Name>Unity.VisualScripting.Flow.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
-      <Project>{EBE66345-4ED1-E08F-3D65-27B23FC4811B}</Project>
-      <Name>Unity.VisualStudio.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Collections.csproj">
-      <Project>{8AA64B20-7962-9FA7-C17E-CE46DC8622C9}</Project>
-      <Name>Unity.Collections</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.ForUI.csproj">
-      <Project>{6FF9C77B-5501-D9FE-3975-B00ED07D9DA7}</Project>
-      <Name>Unity.InputSystem.ForUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.GPUDriven.Runtime.csproj">
-      <Project>{6A882BB5-900E-0139-A61D-999F71801B7A}</Project>
-      <Name>Unity.RenderPipelines.GPUDriven.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{BF509948-CDA4-7ED6-2C94-B548806D6400}</Project>
-      <Name>Unity.Timeline.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
-      <Project>{7E8D4E57-84C1-99AF-FFA6-949E25C6D24E}</Project>
-      <Name>Unity.VisualScripting.State.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
-      <Project>{C1E11E20-C656-7341-3C67-797182DBEB15}</Project>
-      <Name>Unity.ProBuilder.AddOns.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Mathematics.csproj">
-      <Project>{0E3A0184-6343-AD9C-AF9F-DB1E734F65BC}</Project>
-      <Name>Unity.Mathematics</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.csproj">
-      <Project>{A339D373-9AAC-B69C-5703-56F0F1F18733}</Project>
-      <Name>Unity.RenderPipelines.Universal.Shaders</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{A86ABA3E-61DC-A502-9F29-B714A490E23F}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Multiplayer.Center.Common.csproj">
-      <Project>{548DF941-6138-3332-E4BF-03E9B97AEB25}</Project>
-      <Name>Unity.Multiplayer.Center.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Burst.csproj">
-      <Project>{4A8F28EB-5C78-FC75-F8B6-6416297AC0C5}</Project>
-      <Name>Unity.Burst</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
-      <Project>{A4A71865-AC05-9536-80ED-C796BFE2C301}</Project>
-      <Name>Unity.VisualScripting.Core.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEngineBridge.004.csproj">
-      <Project>{11135440-B86E-11D9-BF77-259CD780A82C}</Project>
-      <Name>Unity.InternalAPIEngineBridge.004</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Multiplayer.Center.Editor.csproj">
-      <Project>{3C3C8EFB-E0F7-732C-5BE3-73FB88AE62A9}</Project>
-      <Name>Unity.Multiplayer.Center.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
-      <Project>{91AB2FDB-682D-07AD-AA1A-DC935A4F699D}</Project>
-      <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj">
-      <Project>{C863404E-EC0D-445F-BB33-AA69E2EA2B7E}</Project>
-      <Name>Unity.RenderPipelines.Universal.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.csproj">
-      <Project>{1C3763CA-6515-582B-2EFB-5F6B32207DAD}</Project>
-      <Name>Unity.ProBuilder</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.csproj">
-      <Project>{A7A07D95-C72A-93CB-4498-962524A59065}</Project>
-      <Name>Unity.VisualScripting.State</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Config.Runtime.csproj">
-      <Project>{00F937E6-36E7-A8E5-87AE-DA6A828D332F}</Project>
-      <Name>Unity.RenderPipelines.Universal.Config.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.csproj">
-      <Project>{9DFCA6EA-2552-4C25-C8EC-F8D5E8279686}</Project>
-      <Name>Unity.RenderPipeline.Universal.ShaderLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Collections.Editor.csproj">
-      <Project>{C041630E-0E7D-EA97-5D05-62A0070399FD}</Project>
-      <Name>Unity.Collections.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
-      <Project>{67FF1C6A-43D7-8384-8694-D4E336F4D5E5}</Project>
-      <Name>Unity.ShaderGraph.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.Shared.csproj">
-      <Project>{09FD1CC2-E938-AE98-5C04-22CCA54184C6}</Project>
-      <Name>Unity.RenderPipelines.Core.Editor.Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.csproj">
-      <Project>{0309EE8E-D7F4-A21D-CCB6-8AF48DC851C4}</Project>
-      <Name>Unity.InputSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Settings.Editor.csproj">
-      <Project>{369BFB66-E678-214E-92DE-68269F63D21A}</Project>
-      <Name>Unity.Settings.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Splines.csproj">
-      <Project>{3EC154ED-8671-471C-7937-0DEA3CBEEA61}</Project>
-      <Name>Unity.Splines</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{23ECA631-38AD-F35F-620A-9E13DCB98EE6}</Project>
-      <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
