@@ -1447,9 +1447,9 @@
       <Project>{6FF9C77B-5501-D9FE-3975-B00ED07D9DA7}</Project>
       <Name>Unity.InputSystem.ForUI</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.GPUDriven.Runtime.csproj">
-      <Project>{6A882BB5-900E-0139-A61D-999F71801B7A}</Project>
-      <Name>Unity.RenderPipelines.GPUDriven.Runtime</Name>
+    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
+      <Project>{C1E11E20-C656-7341-3C67-797182DBEB15}</Project>
+      <Name>Unity.ProBuilder.AddOns.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
       <Project>{BF509948-CDA4-7ED6-2C94-B548806D6400}</Project>
@@ -1459,9 +1459,9 @@
       <Project>{7E8D4E57-84C1-99AF-FFA6-949E25C6D24E}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
-      <Project>{C1E11E20-C656-7341-3C67-797182DBEB15}</Project>
-      <Name>Unity.ProBuilder.AddOns.Editor</Name>
+    <ProjectReference Include="Unity.RenderPipelines.GPUDriven.Runtime.csproj">
+      <Project>{6A882BB5-900E-0139-A61D-999F71801B7A}</Project>
+      <Name>Unity.RenderPipelines.GPUDriven.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{0E3A0184-6343-AD9C-AF9F-DB1E734F65BC}</Project>

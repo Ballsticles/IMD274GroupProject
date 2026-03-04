@@ -115,8 +115,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\Upscaling\DLSSOptions.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerRenderingLayerField.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\Lighting\ProbeVolume\ProbeVolumePositioning.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\Textures\MSAASamples.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\Common\ReloadGroupAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\Textures\MSAASamples.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\Lighting\ProbeVolume\IProbeVolumeEnabledRenderPipeline.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\RenderGraph\RenderGraphUtilsResources.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@04ab0eefa0c3\Runtime\Textures\PowerOfTwoTextureAtlas.cs" />
