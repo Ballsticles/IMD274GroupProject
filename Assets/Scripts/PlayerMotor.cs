@@ -10,6 +10,7 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] GroundChecker groundCheck;
     [SerializeField] InputManager inputManager;
+    [SerializeField] Animator animator;
 
 
 
@@ -35,6 +36,12 @@ public class PlayerMotor : MonoBehaviour
     float currentSpeed;
     float velocity;
     float jumpVelocity;
+
+    //animator parameters
+    static readonly int Speed = Animator.StringToHash("Speed");
+    static readonly int Grounded = Animator.StringToHash("Grounded");
+
+
 
     Vector3 movement;
 
@@ -78,10 +85,12 @@ public class PlayerMotor : MonoBehaviour
     {
         if (performed && !jumpTimer.IsRunning && !jumpCooldownTimer.IsRunning && groundCheck.isGrounded)
         {
+            animator.SetTrigger("Jump");
             jumpTimer.Start();
         }else if (!performed && jumpTimer.IsRunning)
         {
             jumpTimer.Stop();
+            animator.ResetTrigger("Jump");
         }
     }
 
@@ -90,11 +99,21 @@ public class PlayerMotor : MonoBehaviour
         
         movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
         HandleTimers();
+        UpdateAnimator();
     }
     private void FixedUpdate()
     {
         HandleJump();
         HandleMovement();
+    }
+
+    void UpdateAnimator()
+    {
+        animator.SetFloat(Speed, currentSpeed);
+        animator.SetBool(Grounded, groundCheck.isGrounded);
+
+        animator.SetFloat("JumpVel", jumpTimer.Progress);
+
     }
 
     void HandleTimers()
@@ -167,7 +186,7 @@ public class PlayerMotor : MonoBehaviour
 
         //apply velocity
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpVelocity, rb.linearVelocity.z);
-
+        
     }
 
 
