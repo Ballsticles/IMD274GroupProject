@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 
 public class PlayerMotor : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerMotor : MonoBehaviour
     [Header ("References")]
     [SerializeField] Rigidbody rb;
     [SerializeField] GroundChecker groundCheck;
+    [SerializeField] LedgeChecker ledgeChecker;
     [SerializeField] InputManager inputManager;
     [SerializeField] Animator animator;
 
@@ -40,7 +42,7 @@ public class PlayerMotor : MonoBehaviour
     //animator parameters
     static readonly int Speed = Animator.StringToHash("Speed");
     static readonly int Grounded = Animator.StringToHash("Grounded");
-
+    static readonly int onLedge = Animator.StringToHash("Ledge");
 
 
     Vector3 movement;
@@ -54,6 +56,7 @@ public class PlayerMotor : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
         groundCheck = GetComponent<GroundChecker>();
+        ledgeChecker = GetComponent<LedgeChecker>();
         
         rb.freezeRotation = true;
 
@@ -83,7 +86,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void OnJump(bool performed)
     {
-        if (performed && !jumpTimer.IsRunning && !jumpCooldownTimer.IsRunning && groundCheck.isGrounded)
+        if (performed && !jumpTimer.IsRunning && !jumpCooldownTimer.IsRunning && (groundCheck.isGrounded || ledgeChecker.onLedge))
         {
             animator.SetTrigger("Jump");
             jumpTimer.Start();
@@ -103,6 +106,7 @@ public class PlayerMotor : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        HandleLedge();
         HandleJump();
         HandleMovement();
     }
@@ -111,7 +115,7 @@ public class PlayerMotor : MonoBehaviour
     {
         animator.SetFloat(Speed, currentSpeed);
         animator.SetBool(Grounded, groundCheck.isGrounded);
-
+        animator.SetBool(onLedge, ledgeChecker.onLedge);
         animator.SetFloat("JumpVel", jumpTimer.Progress);
 
     }
@@ -150,11 +154,35 @@ public class PlayerMotor : MonoBehaviour
         Vector3 velocity = adjustedDirection * movementSpeed * Time.deltaTime;
         rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
     }
+
+
+    private void HandleLedge()
+    {
+        if (ledgeChecker.onLedge&& !groundCheck.isGrounded)
+        {
+            
+            transform.position = ledgeChecker.hangPos;
+            transform.rotation = Quaternion.LookRotation(ledgeChecker.hangRot);
+            rb.useGravity = false;
+
+            if (jumpTimer.IsRunning)
+            {
+                ledgeChecker.onLedge = false;
+                rb.useGravity = true;
+            }
+        }
+        else
+        {
+            rb.useGravity = true;
+            ledgeChecker.onLedge = false;
+
+        }
+    }
     private void HandleJump()
     {
         
         // If not jumping and grounded, keep jump velocity at 0
-        if (!jumpTimer.IsRunning && groundCheck.isGrounded)
+        if (!jumpTimer.IsRunning && groundCheck.isGrounded || ledgeChecker.onLedge)
         {
             jumpVelocity = ZeroF;
             jumpTimer.Stop();
