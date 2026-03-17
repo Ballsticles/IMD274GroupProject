@@ -87,8 +87,8 @@ public class GrappleScript : MonoBehaviour
 
 
         //the distance grapple will try to keep from grapple point
-        joint.maxDistance = distanceFromPoint * 0.8f;
-        joint.minDistance = distanceFromPoint * 0.25f;
+        joint.maxDistance = distanceFromPoint * maxDistanceMult;
+        joint.minDistance = distanceFromPoint * minDistanceMult;
 
 
         //customize values
