@@ -13,6 +13,7 @@ public class InputManager : ScriptableObject, IPlayerActions
     public event UnityAction EnableMouseControlCamera = delegate { };
     public event UnityAction DisableMouseControlCamera = delegate { };
     public event UnityAction<bool> Jump = delegate { };
+    public event UnityAction<bool> Grab = delegate { };
 
     PlayerInputActions inputActions;
 
@@ -47,9 +48,17 @@ public class InputManager : ScriptableObject, IPlayerActions
         //noop
     }
 
-    public void OnCrouch(InputAction.CallbackContext context)
+    public void OnGrab(InputAction.CallbackContext context)
     {
-       //noop
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                Grab.Invoke(true);
+                break;
+            case InputActionPhase.Canceled:
+                Grab.Invoke(false);
+                break;
+        }
     }
 
     public void OnInteract(InputAction.CallbackContext context)
