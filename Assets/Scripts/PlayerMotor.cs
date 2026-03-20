@@ -28,8 +28,9 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] float jumpCooldown = 0f;
     [SerializeField] float jumpMaxHeight = 2f;
     [SerializeField] float gravityMultiplier = 3f;
-    
 
+    GrappleScript grapple;
+    bool swinging;
  
     const float ZeroF = 0f;
 
@@ -52,7 +53,7 @@ public class PlayerMotor : MonoBehaviour
     CountdownTimer jumpCooldownTimer;
     private void Awake()
     {
-        
+        grapple = GetComponent<GrappleScript>();
         rb = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
         groundCheck = GetComponent<GroundChecker>();
@@ -99,8 +100,16 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
-        
-        movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
+        if (grapple.isSwinging)
+        {
+            swinging = true;
+
+        }
+        else if (groundCheck.isGrounded || jumpTimer.IsRunning)
+        {
+            swinging = false;
+        }
+            movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
         HandleTimers();
         UpdateAnimator();
     }
@@ -132,7 +141,7 @@ public class PlayerMotor : MonoBehaviour
     private void HandleMovement()
     {
        
-       
+       if (grapple.isSwinging) return;
         // rotate movement direction to match camera rotation
         var adjustedDirection = Quaternion.AngleAxis(cameraObject.eulerAngles.y, Vector3.up) * movement;
 
@@ -150,6 +159,7 @@ public class PlayerMotor : MonoBehaviour
     }
     void HandleHorizontalMovement(Vector3 adjustedDirection)
     {
+        if (grapple.isSwinging) return;
         //move the player
         Vector3 velocity = adjustedDirection * movementSpeed * Time.deltaTime;
         rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
@@ -182,7 +192,7 @@ public class PlayerMotor : MonoBehaviour
     {
         
         // If not jumping and grounded, keep jump velocity at 0
-        if (!jumpTimer.IsRunning && groundCheck.isGrounded || ledgeChecker.onLedge)
+        if (!jumpTimer.IsRunning && groundCheck.isGrounded || ledgeChecker.onLedge || swinging)
         {
             jumpVelocity = ZeroF;
             jumpTimer.Stop();

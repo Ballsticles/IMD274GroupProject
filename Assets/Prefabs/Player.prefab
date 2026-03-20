@@ -86,7 +86,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4155283934346185742}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 79026a39d75d56f48b9071d0c31d1751, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -241,8 +241,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isSwinging: 0
+  maxSwingDistance: 10
   predictionSphereCastRadius: 5
   predictionPoint: {fileID: 0}
+  minDistanceMult: 0.2
+  maxDistanceMult: 0.5
+  jointSpring: 4.5
+  jointDampen: 7
+  jointMassScale: 4.5
 --- !u!120 &3820609599844456295
 LineRenderer:
   serializedVersion: 3
@@ -269,7 +275,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -346,7 +352,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -377,12 +383,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8514579514958220608}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.542, y: 0.073, z: -0.116}
+  m_LocalRotation: {x: 0.70705813, y: -0.008296203, z: -0.13868022, w: 0.6933743}
+  m_LocalPosition: {x: 0.123272665, y: 0.020840595, z: -0.011209216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2399731093842908357}
+  m_Father: {fileID: 2381199169969946104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &218017377644429643
 PrefabInstance:
@@ -463,14 +469,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2471072193999312270, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
-      insertIndex: -1
+    - targetCorrespondingSourceObject: {fileID: 2453676338479414451, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+      insertIndex: 2
       addedObject: {fileID: 8158935260869749515}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
---- !u!4 &2399731093842908357 stripped
+--- !u!4 &2381199169969946104 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2471072193999312270, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2453676338479414451, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
   m_PrefabInstance: {fileID: 218017377644429643}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8783702466623752743 stripped

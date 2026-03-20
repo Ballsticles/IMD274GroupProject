@@ -25,11 +25,14 @@ public class GrappleScript : MonoBehaviour
     [Header("RopeStuff")]
     public float minDistanceMult = 0.25f;
     public float maxDistanceMult = 0.8f;
-
+    public float jointSpring = 4.5f;
+    public float jointDampen = 7f;
+    public float jointMassScale = 4.5f;
     private void Awake()
     {
         
         lr = GetComponent<LineRenderer>();
+        lr.enabled = false;
         cam = Camera.main.transform;
         player = gameObject.transform;
 
@@ -95,7 +98,7 @@ public class GrappleScript : MonoBehaviour
         joint.spring = 4.5f;
         joint.damper = 7f;
         joint.massScale = 4.5f;
-
+        lr.enabled = true;
         lr.positionCount = 2;
         currentGrapplePosition = outPoint.position;
 
@@ -104,6 +107,7 @@ public class GrappleScript : MonoBehaviour
     private void StopSwing()
     {
         lr.positionCount = 0;
+        lr.enabled = false;
         Destroy(joint);
         isSwinging = false;
     }
