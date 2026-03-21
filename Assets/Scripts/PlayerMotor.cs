@@ -126,7 +126,7 @@ public class PlayerMotor : MonoBehaviour
         animator.SetBool(Grounded, groundCheck.isGrounded);
         animator.SetBool(onLedge, ledgeChecker.onLedge);
         animator.SetFloat("JumpVel", jumpTimer.Progress);
-
+        animator.SetBool("Swinging", grapple.isSwinging);
     }
 
     void HandleTimers()

@@ -15,6 +15,7 @@ public class GrappleScript : MonoBehaviour
     private Vector3 swingPoint;
     private SpringJoint joint;
 
+
     private Vector3 currentGrapplePosition;
 
     [Header("Prediction")]
@@ -28,6 +29,8 @@ public class GrappleScript : MonoBehaviour
     public float jointSpring = 4.5f;
     public float jointDampen = 7f;
     public float jointMassScale = 4.5f;
+   
+ 
     private void Awake()
     {
         
@@ -52,6 +55,7 @@ public class GrappleScript : MonoBehaviour
     void Update()
     {
         CheckForSwingPoints();
+
     }
     private void LateUpdate()
     {
@@ -142,7 +146,8 @@ public class GrappleScript : MonoBehaviour
         if(realHitPoint != Vector3.zero)
         {
             predictionPoint.gameObject.SetActive(true);
-            predictionPoint.position = realHitPoint;
+            predictionPoint.parent.position = realHitPoint;
+
 
         }
 
@@ -153,7 +158,7 @@ public class GrappleScript : MonoBehaviour
         }
 
         predictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
-
+        
 
 
     }
