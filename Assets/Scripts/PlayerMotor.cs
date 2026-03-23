@@ -26,7 +26,6 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] float jumpForce = 10;
     [SerializeField] float jumpDuration = 0.5f;
     [SerializeField] float jumpCooldown = 0f;
-    [SerializeField] float jumpMaxHeight = 2f;
     [SerializeField] float gravityMultiplier = 3f;
 
     GrappleScript grapple;
@@ -39,6 +38,8 @@ public class PlayerMotor : MonoBehaviour
     float currentSpeed;
     float velocity;
     float jumpVelocity;
+
+    StateMachine stateMachine;
 
     //animator parameters
     static readonly int Speed = Animator.StringToHash("Speed");
@@ -67,8 +68,30 @@ public class PlayerMotor : MonoBehaviour
 
         timers = new List<Timer>(2) {jumpTimer, jumpCooldownTimer};
 
+        jumpTimer.onTimerStart += () => jumpVelocity = jumpForce;
         jumpTimer.onTimerStop += () => jumpCooldownTimer.Start();
+
+
+        //State Machine
+        stateMachine = new StateMachine();
+
+        // Declare states
+        var locomotionState = new LocomotionState(this, animator);
+        var jumpState = new JumpState(this, animator);
+        var swingState = new SwingState(this, animator);
+        // Define transitions
+        At(locomotionState, jumpState, new FuncPredicate(() => jumpTimer.IsRunning));
+        At(jumpState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded && !jumpTimer.IsRunning));
+        Any(swingState, new FuncPredicate(() => swinging));
+        At (swingState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded));
+        
+        // Set Initial State
+
+        stateMachine.SetState(locomotionState);
     }
+
+    void At(IStates from, IStates to, IPredicate condition) => stateMachine.AddTransition(from, to, condition);
+    void Any(IStates to, IPredicate condition) => stateMachine.AddAnyTransition(to, condition);
 
     void Start()
     {
@@ -110,14 +133,16 @@ public class PlayerMotor : MonoBehaviour
             swinging = false;
         }
             movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
+
+        stateMachine.Update();
+
         HandleTimers();
         UpdateAnimator();
     }
     private void FixedUpdate()
     {
         HandleLedge();
-        HandleJump();
-        HandleMovement();
+        stateMachine.FixedUpdate();
     }
 
     void UpdateAnimator()
@@ -138,7 +163,7 @@ public class PlayerMotor : MonoBehaviour
     }
 
 
-    private void HandleMovement()
+    public void HandleMovement()
     {
        
        if (grapple.isSwinging) return;
@@ -188,7 +213,7 @@ public class PlayerMotor : MonoBehaviour
 
         }
     }
-    private void HandleJump()
+    public void HandleJump()
     {
         
         // If not jumping and grounded, keep jump velocity at 0
@@ -200,22 +225,7 @@ public class PlayerMotor : MonoBehaviour
         }
 
         //if jumping or falling calculate velocity
-        if (jumpTimer.IsRunning)
-        {
-            float launchPoint = 0.9f;
-            if(jumpTimer.Progress > launchPoint)
-            {
-                //calculate the velocity required to reach the jump height using physics equation y = sqrt(2*gravity*height)
-                jumpVelocity = Mathf.Sqrt(2 * jumpMaxHeight * Mathf.Abs(Physics.gravity.y));
-            }
-            else
-            {
-                //gradually apply less velocity as the jump progresses
-                jumpVelocity += (1 - jumpTimer.Progress) * jumpForce * Time.fixedDeltaTime;
-            }
-
-        }
-        else
+        if (!jumpTimer.IsRunning)
         {
             //gravity Takes over
             jumpVelocity += Physics.gravity.y * gravityMultiplier * Time.fixedDeltaTime;

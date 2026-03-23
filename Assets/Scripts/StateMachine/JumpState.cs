@@ -1,0 +1,21 @@
+using UnityEngine;
+
+public class JumpState : BaseState
+{
+    
+    public JumpState(PlayerMotor player, Animator animator) : base(player, animator) { }
+
+    public override void OnEnter()
+    {
+        Debug.Log("JumpState.OnEnter");
+        animator.CrossFade(JumpHash, crossFadeDuration);
+
+    }
+
+    public override void FixedUpdate()
+    {
+        player.HandleJump();
+        player.HandleMovement();
+    }
+
+}
