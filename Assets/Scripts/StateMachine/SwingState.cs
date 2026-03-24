@@ -3,19 +3,20 @@ using UnityEngine;
 public class SwingState : BaseState
 {
     
-    public SwingState(PlayerMotor player, Animator animator) : base(player, animator)
+    public SwingState(PlayerMotor player, Animator animator, GroundChecker groundChecker) : base(player, animator, groundChecker)
     {
     }
 
     public override void OnEnter()
     {
-        Debug.Log("SwingState.OnEnter");
+        
         animator.CrossFade(SwingHash, crossFadeDuration);
+        player.swinging = true;
     }
 
     public override void FixedUpdate()
     {
-        player.HandleMovement();
+        
     }
 
 }

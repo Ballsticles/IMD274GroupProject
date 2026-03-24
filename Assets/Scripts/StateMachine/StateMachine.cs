@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 
 public class StateMachine {
-    StateNode current;
+    public StateNode current;
     Dictionary<Type, StateNode> nodes = new();
     HashSet<ITransition> anyTransitions = new();
     
@@ -82,7 +82,7 @@ public class StateMachine {
 
 
 
-    class StateNode
+    public class StateNode
     {
         public IStates State { get; }
         public HashSet<ITransition> Transitions { get; }

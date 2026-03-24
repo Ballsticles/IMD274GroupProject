@@ -26,10 +26,10 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] float jumpForce = 10;
     [SerializeField] float jumpDuration = 0.5f;
     [SerializeField] float jumpCooldown = 0f;
-    [SerializeField] float gravityMultiplier = 3f;
-
+    public float gravityMultiplier = 3f;
+    [SerializeField] bool hasDive;
     GrappleScript grapple;
-    bool swinging;
+    public bool swinging; 
  
     const float ZeroF = 0f;
 
@@ -40,7 +40,7 @@ public class PlayerMotor : MonoBehaviour
     float jumpVelocity;
 
     StateMachine stateMachine;
-
+    public string currentState;
     //animator parameters
     static readonly int Speed = Animator.StringToHash("Speed");
     static readonly int Grounded = Animator.StringToHash("Grounded");
@@ -52,6 +52,10 @@ public class PlayerMotor : MonoBehaviour
     List<Timer> timers;
     CountdownTimer jumpTimer;
     CountdownTimer jumpCooldownTimer;
+
+
+    bool unlockedDoubleJump = true;
+
     private void Awake()
     {
         grapple = GetComponent<GrappleScript>();
@@ -76,18 +80,37 @@ public class PlayerMotor : MonoBehaviour
         stateMachine = new StateMachine();
 
         // Declare states
-        var locomotionState = new LocomotionState(this, animator);
-        var jumpState = new JumpState(this, animator);
-        var swingState = new SwingState(this, animator);
+        var locomotionState = new LocomotionState(this, animator, groundCheck);
+        var jumpState = new JumpState(this, animator, groundCheck);
+        var swingState = new SwingState(this, animator, groundCheck);
+        var fallState = new FallState(this, animator, groundCheck);
+        var ledgeState = new LedgeState(this, animator, groundCheck);
         // Define transitions
+        //jump transitions
         At(locomotionState, jumpState, new FuncPredicate(() => jumpTimer.IsRunning));
-        At(jumpState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded && !jumpTimer.IsRunning));
-        Any(swingState, new FuncPredicate(() => swinging));
-        At (swingState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded));
+        At(fallState, jumpState, new FuncPredicate(() => jumpTimer.IsRunning && hasDive));
+        At(ledgeState, jumpState, new FuncPredicate(() => jumpTimer.IsRunning));
         
+        //locomotionState Transitions
+        At(jumpState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded && !jumpTimer.IsRunning && !ledgeChecker.onLedge));
+        At(swingState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded));
+        At(fallState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded && !ledgeChecker.onLedge));
+
+        //fall state transitions
+        Any(fallState, new FuncPredicate(() => !groundCheck.isGrounded && !jumpTimer.IsRunning && !grapple.isSwinging && !ledgeChecker.onLedge));
+        
+        
+        //swingState Transitions
+        Any(swingState, new FuncPredicate(() => grapple.isSwinging));
+        
+
+        //ledgeState Transitions
+        Any(ledgeState, new FuncPredicate(() => ledgeChecker.onLedge && !jumpTimer.IsRunning));
+
         // Set Initial State
 
         stateMachine.SetState(locomotionState);
+        hasDive = true;
     }
 
     void At(IStates from, IStates to, IPredicate condition) => stateMachine.AddTransition(from, to, condition);
@@ -114,35 +137,47 @@ public class PlayerMotor : MonoBehaviour
         {
             animator.SetTrigger("Jump");
             jumpTimer.Start();
-        }else if (!performed && jumpTimer.IsRunning)
+        }
+        else if (!performed && jumpTimer.IsRunning || performed && jumpTimer.IsFinished)
         {
             jumpTimer.Stop();
             animator.ResetTrigger("Jump");
+        }
+        animator.ResetTrigger("Jump");
+        if (performed && !jumpTimer.IsRunning && hasDive && !groundCheck.isGrounded)
+        {
+            
+            animator.SetTrigger("DoubleJump");
+            
+            jumpTimer.Start();
+            hasDive = false;
         }
     }
 
     private void Update()
     {
-        if (grapple.isSwinging)
-        {
-            swinging = true;
-
-        }
-        else if (groundCheck.isGrounded || jumpTimer.IsRunning)
+        if(jumpTimer.IsRunning || groundCheck.isGrounded)
         {
             swinging = false;
         }
-            movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
+
+        if (groundCheck.isGrounded && !hasDive && unlockedDoubleJump)
+        {
+            hasDive = true;
+        }
+        movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
 
         stateMachine.Update();
 
         HandleTimers();
         UpdateAnimator();
+        currentState = stateMachine.current.State.ToString();
     }
     private void FixedUpdate()
     {
         HandleLedge();
         stateMachine.FixedUpdate();
+        
     }
 
     void UpdateAnimator()
@@ -150,7 +185,7 @@ public class PlayerMotor : MonoBehaviour
         animator.SetFloat(Speed, currentSpeed);
         animator.SetBool(Grounded, groundCheck.isGrounded);
         animator.SetBool(onLedge, ledgeChecker.onLedge);
-        animator.SetFloat("JumpVel", jumpTimer.Progress);
+       
         animator.SetBool("Swinging", grapple.isSwinging);
     }
 
@@ -166,7 +201,7 @@ public class PlayerMotor : MonoBehaviour
     public void HandleMovement()
     {
        
-       if (grapple.isSwinging) return;
+       
         // rotate movement direction to match camera rotation
         var adjustedDirection = Quaternion.AngleAxis(cameraObject.eulerAngles.y, Vector3.up) * movement;
 
@@ -184,16 +219,16 @@ public class PlayerMotor : MonoBehaviour
     }
     void HandleHorizontalMovement(Vector3 adjustedDirection)
     {
-        if (grapple.isSwinging) return;
+        
         //move the player
         Vector3 velocity = adjustedDirection * movementSpeed * Time.deltaTime;
         rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
     }
 
 
-    private void HandleLedge()
+    public void HandleLedge()
     {
-        if (ledgeChecker.onLedge&& !groundCheck.isGrounded)
+        if (ledgeChecker.onLedge)
         {
             
             transform.position = ledgeChecker.hangPos;

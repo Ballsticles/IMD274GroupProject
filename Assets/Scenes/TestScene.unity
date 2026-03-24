@@ -26877,6 +26877,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4947615400017170679, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844891375862804532, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
+      propertyPath: coyoteTime
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8248774202387038206, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
       propertyPath: predictionPoint
       value: 

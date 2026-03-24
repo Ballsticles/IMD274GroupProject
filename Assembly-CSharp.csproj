@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\StateMachine\IStates.cs" />
     <Compile Include="Assets\Scripts\StateMachine\FuncPredicate.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\FallState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\IPredicate.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\GrappleScript.cs" />
     <Compile Include="Assets\Scripts\StateMachine\SwingState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\ITransition.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\LedgeState.cs" />
     <Compile Include="Assets\Scripts\LedgeChecker.cs" />
   </ItemGroup>
   <ItemGroup>

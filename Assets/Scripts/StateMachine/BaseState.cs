@@ -4,17 +4,20 @@ public abstract class BaseState : IStates
 {
     protected readonly PlayerMotor player;
     protected readonly Animator animator;
+    protected readonly GroundChecker groundChecker;
 
     protected static readonly int LocomotionHash = Animator.StringToHash("Locomotion");
     protected static readonly int JumpHash = Animator.StringToHash("Jump");
     protected static readonly int SwingHash = Animator.StringToHash("Swing");
+    protected static readonly int FallHash = Animator.StringToHash("Fall");
 
     protected const float crossFadeDuration = 0.5f;
 
-    protected BaseState(PlayerMotor player, Animator animator)
+    protected BaseState(PlayerMotor player, Animator animator, GroundChecker groundChecker)
     {
         this.player = player;
         this.animator = animator;
+        this.groundChecker = groundChecker;
     }
 
     public virtual void OnEnter()
@@ -32,7 +35,7 @@ public abstract class BaseState : IStates
     public virtual void OnExit()
     {
         //noop
-        Debug.Log("BaseState.OnExit");
+        
     }
 
 }
