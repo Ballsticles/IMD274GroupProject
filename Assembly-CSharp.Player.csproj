@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\StateMachine\SwingState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\ITransition.cs" />
     <Compile Include="Assets\Scripts\StateMachine\LedgeState.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\DiveState.cs" />
     <Compile Include="Assets\Scripts\LedgeChecker.cs" />
   </ItemGroup>
   <ItemGroup>

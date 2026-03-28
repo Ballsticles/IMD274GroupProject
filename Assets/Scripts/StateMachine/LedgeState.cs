@@ -7,7 +7,7 @@ public class LedgeState : BaseState
     }
     public override void OnEnter()
     {
-        
+        animator.CrossFade(LedgeHash, crossFadeDuration);
     }
     public override void FixedUpdate()
     {

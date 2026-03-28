@@ -27,7 +27,16 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] float jumpDuration = 0.5f;
     [SerializeField] float jumpCooldown = 0f;
     public float gravityMultiplier = 3f;
+    
+
+    [Header("Dive Settings")]
+    [SerializeField] float diveForce = 10;   
+    [SerializeField] float diveDuration = 0.5f;
+    [SerializeField] float diveCooldown = .3f;
+ 
     [SerializeField] bool hasDive;
+  
+
     GrappleScript grapple;
     public bool swinging; 
  
@@ -38,6 +47,10 @@ public class PlayerMotor : MonoBehaviour
     float currentSpeed;
     float velocity;
     float jumpVelocity;
+    float diveVelocity = 1f;
+
+
+    Vector3 movement;
 
     StateMachine stateMachine;
     public string currentState;
@@ -47,11 +60,14 @@ public class PlayerMotor : MonoBehaviour
     static readonly int onLedge = Animator.StringToHash("Ledge");
 
 
-    Vector3 movement;
+    
 
     List<Timer> timers;
     CountdownTimer jumpTimer;
     CountdownTimer jumpCooldownTimer;
+
+    CountdownTimer diveTimer;
+    CountdownTimer diveCooldownTimer;
 
 
     bool unlockedDoubleJump = true;
@@ -70,11 +86,19 @@ public class PlayerMotor : MonoBehaviour
         jumpTimer = new CountdownTimer(jumpDuration);
         jumpCooldownTimer = new CountdownTimer(jumpCooldown);
 
-        timers = new List<Timer>(2) {jumpTimer, jumpCooldownTimer};
-
         jumpTimer.onTimerStart += () => jumpVelocity = jumpForce;
         jumpTimer.onTimerStop += () => jumpCooldownTimer.Start();
 
+        diveTimer = new CountdownTimer(diveDuration);
+        diveCooldownTimer = new CountdownTimer(diveCooldown);
+
+        diveTimer.onTimerStart -= () => diveVelocity = diveForce;
+        diveTimer.onTimerStop += () => {
+            diveVelocity = 1f;
+            diveCooldownTimer.Start();
+        };
+
+        timers = new List<Timer>(4) {jumpTimer, jumpCooldownTimer , diveTimer , diveCooldownTimer};
 
         //State Machine
         stateMachine = new StateMachine();
@@ -85,6 +109,7 @@ public class PlayerMotor : MonoBehaviour
         var swingState = new SwingState(this, animator, groundCheck);
         var fallState = new FallState(this, animator, groundCheck);
         var ledgeState = new LedgeState(this, animator, groundCheck);
+        var diveState = new DiveState(this,animator,groundCheck);
         // Define transitions
         //jump transitions
         At(locomotionState, jumpState, new FuncPredicate(() => jumpTimer.IsRunning));
@@ -106,6 +131,8 @@ public class PlayerMotor : MonoBehaviour
 
         //ledgeState Transitions
         Any(ledgeState, new FuncPredicate(() => ledgeChecker.onLedge && !jumpTimer.IsRunning));
+
+        Any(diveState, new FuncPredicate(() => hasDive && diveTimer.IsRunning));
 
         // Set Initial State
 
@@ -149,7 +176,7 @@ public class PlayerMotor : MonoBehaviour
             
             animator.SetTrigger("DoubleJump");
             
-            jumpTimer.Start();
+            diveTimer.Start();
             hasDive = false;
         }
     }
@@ -161,10 +188,18 @@ public class PlayerMotor : MonoBehaviour
             swinging = false;
         }
 
-        if (groundCheck.isGrounded && !hasDive && unlockedDoubleJump)
+        if (unlockedDoubleJump)
         {
-            hasDive = true;
+            if(!hasDive)
+            {
+                if(groundCheck.isGrounded)
+                {
+
+                    hasDive = true;
+                }
+            }
         }
+        
         movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
 
         stateMachine.Update();
@@ -221,7 +256,7 @@ public class PlayerMotor : MonoBehaviour
     {
         
         //move the player
-        Vector3 velocity = adjustedDirection * movementSpeed * Time.deltaTime;
+        Vector3 velocity = adjustedDirection * movementSpeed * diveVelocity * Time.deltaTime;
         rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
     }
 

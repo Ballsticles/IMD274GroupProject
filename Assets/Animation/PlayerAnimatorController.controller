@@ -182,7 +182,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hanging Idle
+  m_Name: Ledge
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -677,9 +677,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.06255299
-  m_TransitionOffset: 0.014750883
-  m_ExitTime: 0.5
+  m_TransitionDuration: 0.08837947
+  m_TransitionOffset: 0.06586091
+  m_ExitTime: 0.09399677
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -692,7 +692,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Joyful Jump
+  m_Name: Dive
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -868,7 +868,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.5
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
