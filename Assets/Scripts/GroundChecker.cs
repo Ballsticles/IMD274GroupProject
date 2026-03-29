@@ -5,21 +5,22 @@ public class GroundChecker : MonoBehaviour
 {
     [SerializeField] float groundDistance = 0.08f;
     [SerializeField] float radius = 2;
-    [SerializeField] float coyoteTime = 0.1f;
+    [SerializeField] float coyoteTime = 1f;
     [SerializeField] float coyoteProgress;
     [SerializeField] LayerMask groundLayers;
     bool groundCheck;
     public bool isGrounded {  get; private set; }
-    CountdownTimer coyoteTimer;
-
+    public CountdownTimer coyoteTimer;
+  void Awake()
+    {
+        coyoteTimer = new CountdownTimer(coyoteTime);
+        coyoteTimer.onTimerStop += () => isGrounded = false;
+    }
     private void Update()
     {
         coyoteTimer.Tick(Time.deltaTime);
     }
-    void Awake()
-    {
-        coyoteTimer = new CountdownTimer(coyoteTime);
-    }
+  
     private void FixedUpdate()
     {
 
@@ -33,15 +34,12 @@ public class GroundChecker : MonoBehaviour
         {
             isGrounded = true;
         }
-        else if (!groundCheck && !coyoteTimer.IsFinished)
+        else if (!groundCheck && !coyoteTimer.IsRunning)
         {
-            isGrounded = true;
             coyoteTimer.Start();
         }
-        else if (!groundCheck && coyoteTimer.IsFinished)
-        {
-            isGrounded = false;
-        }
+        
+ 
         coyoteProgress = coyoteTimer.Progress;
     }
     private void OnDrawGizmos()

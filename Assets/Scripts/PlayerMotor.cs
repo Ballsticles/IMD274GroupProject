@@ -92,7 +92,7 @@ public class PlayerMotor : MonoBehaviour
         diveTimer = new CountdownTimer(diveDuration);
         diveCooldownTimer = new CountdownTimer(diveCooldown);
 
-        diveTimer.onTimerStart -= () => diveVelocity = diveForce;
+        diveTimer.onTimerStart += () => diveVelocity = diveForce;
         diveTimer.onTimerStop += () => {
             diveVelocity = 1f;
             diveCooldownTimer.Start();
@@ -113,16 +113,17 @@ public class PlayerMotor : MonoBehaviour
         // Define transitions
         //jump transitions
         At(locomotionState, jumpState, new FuncPredicate(() => jumpTimer.IsRunning));
-        At(fallState, jumpState, new FuncPredicate(() => jumpTimer.IsRunning && hasDive));
+        
         At(ledgeState, jumpState, new FuncPredicate(() => jumpTimer.IsRunning));
         
         //locomotionState Transitions
         At(jumpState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded && !jumpTimer.IsRunning && !ledgeChecker.onLedge));
         At(swingState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded));
         At(fallState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded && !ledgeChecker.onLedge));
+        At(diveState, locomotionState, new FuncPredicate(() => groundCheck.isGrounded && !diveTimer.IsRunning));
 
         //fall state transitions
-        Any(fallState, new FuncPredicate(() => !groundCheck.isGrounded && !jumpTimer.IsRunning && !grapple.isSwinging && !ledgeChecker.onLedge));
+        Any(fallState, new FuncPredicate(() => !groundCheck.isGrounded && !jumpTimer.IsRunning && !grapple.isSwinging && !ledgeChecker.onLedge && !diveTimer.IsRunning));
         
         
         //swingState Transitions
@@ -132,7 +133,8 @@ public class PlayerMotor : MonoBehaviour
         //ledgeState Transitions
         Any(ledgeState, new FuncPredicate(() => ledgeChecker.onLedge && !jumpTimer.IsRunning));
 
-        Any(diveState, new FuncPredicate(() => hasDive && diveTimer.IsRunning));
+        Any(diveState, new FuncPredicate(() =>  diveTimer.IsRunning));
+        At(fallState, diveState, new FuncPredicate(()=> diveTimer.IsRunning));
 
         // Set Initial State
 
@@ -164,6 +166,7 @@ public class PlayerMotor : MonoBehaviour
         {
             animator.SetTrigger("Jump");
             jumpTimer.Start();
+            groundCheck.coyoteTimer.Stop();
         }
         else if (!performed && jumpTimer.IsRunning || performed && jumpTimer.IsFinished)
         {
@@ -171,13 +174,14 @@ public class PlayerMotor : MonoBehaviour
             animator.ResetTrigger("Jump");
         }
         animator.ResetTrigger("Jump");
-        if (performed && !jumpTimer.IsRunning && hasDive && !groundCheck.isGrounded)
+        if (performed && !diveTimer.IsRunning && hasDive && !groundCheck.isGrounded && !jumpTimer.IsRunning && !grapple.isSwinging)
         {
-            
             animator.SetTrigger("DoubleJump");
-            
             diveTimer.Start();
             hasDive = false;
+        }
+        else if (!performed && diveTimer.IsRunning){
+            diveTimer.Stop();
         }
     }
 

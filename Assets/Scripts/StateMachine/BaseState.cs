@@ -14,7 +14,7 @@ public abstract class BaseState : IStates
     protected static readonly int DiveHash = Animator.StringToHash("Dive");
 
 
-    protected const float crossFadeDuration = 0.2f;
+    protected const float crossFadeDuration = 0.1f;
 
     protected BaseState(PlayerMotor player, Animator animator, GroundChecker groundChecker)
     {

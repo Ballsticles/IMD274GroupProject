@@ -11,6 +11,7 @@ public class DiveState : BaseState
 
     public override void FixedUpdate()
     {
+        groundChecker.CheckForGround();
         player.HandleMovement();
         
     }
