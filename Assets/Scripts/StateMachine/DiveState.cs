@@ -13,7 +13,7 @@ public class DiveState : BaseState
     {
         groundChecker.CheckForGround();
         player.HandleMovement();
-        
+        player.HandleJump();
     }
 
 

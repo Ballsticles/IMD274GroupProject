@@ -29,6 +29,8 @@ public class GrappleScript : MonoBehaviour
     public float jointSpring = 4.5f;
     public float jointDampen = 7f;
     public float jointMassScale = 4.5f;
+    [SerializeField] GameObject held;
+    [SerializeField] GameObject grappled;
    
  
     private void Awake()
@@ -55,6 +57,7 @@ public class GrappleScript : MonoBehaviour
     void Update()
     {
         CheckForSwingPoints();
+        
 
     }
     private void LateUpdate()
@@ -81,6 +84,8 @@ public class GrappleScript : MonoBehaviour
         
 
         if(predictionHit.point == Vector3.zero) return;
+        held.SetActive(false);
+        grappled.SetActive(true);
 
         // deactovate active grapple
         isSwinging = true;
@@ -106,6 +111,8 @@ public class GrappleScript : MonoBehaviour
         lr.positionCount = 2;
         currentGrapplePosition = outPoint.position;
 
+
+
     }
     
     private void StopSwing()
@@ -114,6 +121,9 @@ public class GrappleScript : MonoBehaviour
         lr.enabled = false;
         Destroy(joint);
         isSwinging = false;
+        held.SetActive(true );
+        grappled.SetActive(false );
+
     }
 
     void DrawRope()

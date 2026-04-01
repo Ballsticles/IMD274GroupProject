@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9127377065571972844}
   - component: {fileID: 7058355104566499166}
-  - component: {fileID: 822764957745633865}
   - component: {fileID: 8332499446293639060}
   - component: {fileID: 9658493377937670}
   - component: {fileID: 6844891375862804532}
@@ -97,18 +96,14 @@ MonoBehaviour:
   jumpDuration: 0.4
   jumpCooldown: 0
   gravityMultiplier: 2
---- !u!114 &822764957745633865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4155283934346185742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb7e1b674dcb3640b081c0ec48b0d17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
+  diveHorForce: 5
+  diveVertForce: 8
+  diveDuration: 0.25
+  diveCooldown: 0.3
+  diveIsJump: 0
+  hasDive: 0
+  swinging: 0
+  currentState: 
 --- !u!136 &8332499446293639060
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -173,6 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GroundChecker
   groundDistance: -0.6
   radius: 0.45
+  coyoteTime: 0.1
+  coyoteProgress: 0
   groundLayers:
     serializedVersion: 2
     m_Bits: 321
@@ -223,12 +220,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'root'\n\tTransform 'lowerarm_l'\n\tTransform
-    'root'\n\tTransform 'neck_01'\n\tTransform 'clavicle_l'\n\tTransform 'hand_l'\n\tTransform
-    'upperarm_r'\n\tTransform 'upperarm_l'\n\tTransform 'thigh_l'\n\tTransform 'calf_l'\n\tand
-    more ...\n\tFrom animation clip 'Sitting'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -284,6 +276,8 @@ MonoBehaviour:
   jointSpring: 4.5
   jointDampen: 7
   jointMassScale: 4.5
+  held: {fileID: 7445564480725289885}
+  grappled: {fileID: 0}
 --- !u!120 &3820609599844456295
 LineRenderer:
   serializedVersion: 3
@@ -343,13 +337,22 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1640625
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -519,6 +522,11 @@ Transform:
 --- !u!4 &6436389198851883596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6508871864379605767, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+  m_PrefabInstance: {fileID: 218017377644429643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7445564480725289885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7229817629626485462, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
   m_PrefabInstance: {fileID: 218017377644429643}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8783702466623752743 stripped

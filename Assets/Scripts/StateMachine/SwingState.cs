@@ -14,9 +14,9 @@ public class SwingState : BaseState
         player.swinging = true;
     }
 
-    public override void FixedUpdate()
+    public override void OnExit()
     {
-        
+        player.swinging = false;
+        player.StartFallTimer();
     }
-
 }
