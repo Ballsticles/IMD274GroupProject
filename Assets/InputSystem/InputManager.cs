@@ -14,6 +14,7 @@ public class InputManager : ScriptableObject, IPlayerActions
     public event UnityAction DisableMouseControlCamera = delegate { };
     public event UnityAction<bool> Jump = delegate { };
     public event UnityAction<bool> Grab = delegate { };
+    public event UnityAction<bool> Attack = delegate { };
 
     PlayerInputActions inputActions;
 
@@ -45,7 +46,15 @@ public class InputManager : ScriptableObject, IPlayerActions
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        //noop
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                Attack.Invoke(true);
+                break;
+            case InputActionPhase.Canceled:
+                Attack.Invoke(false);
+                break;
+        }
     }
 
     public void OnGrab(InputAction.CallbackContext context)

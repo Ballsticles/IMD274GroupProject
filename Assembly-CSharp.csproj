@@ -61,24 +61,31 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\StateMachine\IStates.cs" />
     <Compile Include="Assets\Scripts\StateMachine\FuncPredicate.cs" />
     <Compile Include="Assets\Scripts\StateMachine\FallState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\IPredicate.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine\LocomotionState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\InputSystem\InputManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine\JumpState.cs" />
+    <Compile Include="Assets\Scripts\IDamagable.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\StateMachine\Transition.cs" />
+    <Compile Include="Assets\Scripts\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\StateMachine\BaseState.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\AttackSO.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\GrappleScript.cs" />
     <Compile Include="Assets\Scripts\StateMachine\SwingState.cs" />
+    <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\StateMachine\ITransition.cs" />
     <Compile Include="Assets\Scripts\StateMachine\LedgeState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\DiveState.cs" />
@@ -1183,13 +1190,13 @@
       <Project>{3096BE5D-FBB8-58EF-AEBE-5B5AE96FB75A}</Project>
       <Name>Unity.RenderPipelines.Universal.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
-      <Project>{1AE74FF9-3AFF-3FEE-A41B-7CD3A0F8E8B3}</Project>
-      <Name>Unity.AI.Navigation.Updater</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{E683E4EC-4C1D-3EC9-40FD-5AFC09442389}</Project>
       <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
+      <Project>{1AE74FF9-3AFF-3FEE-A41B-7CD3A0F8E8B3}</Project>
+      <Name>Unity.AI.Navigation.Updater</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
       <Project>{551CCC7A-2C60-8E38-708F-D79D9E03EF97}</Project>
@@ -1251,9 +1258,9 @@
       <Project>{0FA53D36-1889-5C10-2445-3C5210BE01D0}</Project>
       <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
-      <Project>{425AC49F-9498-6A1A-A27E-EC0B57740762}</Project>
-      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
+    <ProjectReference Include="Unity.TerrainTools.csproj">
+      <Project>{CDD9A121-D08C-6C3A-7853-5EB12D323659}</Project>
+      <Name>Unity.TerrainTools</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
       <Project>{955DD535-19A5-5546-EC9B-E84E2FC5DFD2}</Project>
@@ -1270,6 +1277,10 @@
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{94F5C507-F432-7B71-9758-336669336079}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
+      <Project>{425AC49F-9498-6A1A-A27E-EC0B57740762}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
       <Project>{9536E6F1-6FF2-8CB4-77F5-2E1A2D148D0B}</Project>
@@ -1334,6 +1345,10 @@
     <ProjectReference Include="Unity.Multiplayer.Center.Editor.csproj">
       <Project>{3C3C8EFB-E0F7-732C-5BE3-73FB88AE62A9}</Project>
       <Name>Unity.Multiplayer.Center.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TerrainTools.Editor.csproj">
+      <Project>{B5F2FBB5-F52A-E282-763C-C2667AC38A81}</Project>
+      <Name>Unity.TerrainTools.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
       <Project>{91AB2FDB-682D-07AD-AA1A-DC935A4F699D}</Project>

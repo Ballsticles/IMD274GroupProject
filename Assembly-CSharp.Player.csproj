@@ -61,24 +61,31 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\StateMachine\IStates.cs" />
     <Compile Include="Assets\Scripts\StateMachine\FuncPredicate.cs" />
     <Compile Include="Assets\Scripts\StateMachine\FallState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\IPredicate.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine\LocomotionState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\InputSystem\InputManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine\JumpState.cs" />
+    <Compile Include="Assets\Scripts\IDamagable.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\StateMachine\Transition.cs" />
+    <Compile Include="Assets\Scripts\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\StateMachine\BaseState.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\AttackSO.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\GrappleScript.cs" />
     <Compile Include="Assets\Scripts\StateMachine\SwingState.cs" />
+    <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\StateMachine\ITransition.cs" />
     <Compile Include="Assets\Scripts\StateMachine\LedgeState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\DiveState.cs" />
@@ -947,9 +954,9 @@
       <Project>{B763FF79-2323-CC9D-4118-193C6560F5A8}</Project>
       <Name>Unity.Cinemachine.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
-      <Project>{00420D81-E70A-816F-0086-191765177F77}</Project>
-      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
+    <ProjectReference Include="Unity.TerrainTools.Player.csproj">
+      <Project>{037489F4-573C-47F1-E69A-FA0249332F3C}</Project>
+      <Name>Unity.TerrainTools.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Player.csproj">
       <Project>{4E1D3329-71E9-86AE-8C96-8B7A193CC5CB}</Project>
@@ -958,6 +965,10 @@
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
       <Project>{1D581E71-A01D-C83D-13D5-24AEA2DD93F3}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
+      <Project>{00420D81-E70A-816F-0086-191765177F77}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.Player.csproj">
       <Project>{902D6208-FA9D-27B9-CEA3-1B04B3A76F34}</Project>

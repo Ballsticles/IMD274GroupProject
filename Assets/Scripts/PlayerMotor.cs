@@ -13,7 +13,7 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] LedgeChecker ledgeChecker;
     [SerializeField] InputManager inputManager;
     [SerializeField] Animator animator;
-
+    [SerializeField] PlayerCombat combat;
 
 
     [Header ("Settings")]
@@ -134,12 +134,12 @@ public class PlayerMotor : MonoBehaviour
         stateMachine = new StateMachine();
 
         // Declare states
-        var locomotionState = new LocomotionState(this, animator, groundCheck);
-        var jumpState = new JumpState(this, animator, groundCheck);
-        var swingState = new SwingState(this, animator, groundCheck);
-        var fallState = new FallState(this, animator, groundCheck);
-        var ledgeState = new LedgeState(this, animator, groundCheck);
-        var diveState = new DiveState(this,animator,groundCheck);
+        var locomotionState = new LocomotionState(this, animator, groundCheck, combat);
+        var jumpState = new JumpState(this, animator, groundCheck, combat);
+        var swingState = new SwingState(this, animator, groundCheck, combat);
+        var fallState = new FallState(this, animator, groundCheck, combat);
+        var ledgeState = new LedgeState(this, animator, groundCheck, combat);
+        var diveState = new DiveState(this,animator,groundCheck, combat);
 
 
         
@@ -172,7 +172,6 @@ public class PlayerMotor : MonoBehaviour
         // Set Initial State
 
         stateMachine.SetState(locomotionState);
-        hasDive = true;
     }
 
     void At(IStates from, IStates to, IPredicate condition) => stateMachine.AddTransition(from, to, condition);

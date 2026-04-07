@@ -14,10 +14,10 @@ TagManager:
   - Ground
   - Player
   - Grappleable
-  - 
-  - 
-  - 
-  - 
+  - Slope
+  - Enemy
+  - PlayerWeapon
+  - EnemyWeapon
   - 
   - 
   - 

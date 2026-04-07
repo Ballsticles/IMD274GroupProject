@@ -4,7 +4,7 @@ public class FallState : BaseState
 {
     
 
-    public FallState(PlayerMotor player, Animator animator, GroundChecker groundChecker) : base(player, animator, groundChecker)
+    public FallState(PlayerMotor player, Animator animator, GroundChecker groundChecker, PlayerCombat combat) : base(player, animator, groundChecker, combat)
     {
     }
     public override void OnEnter()

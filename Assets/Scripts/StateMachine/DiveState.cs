@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DiveState : BaseState
 {
-    public DiveState(PlayerMotor player, Animator animator, GroundChecker groundChecker) : base(player, animator, groundChecker) { }
+    public DiveState(PlayerMotor player, Animator animator, GroundChecker groundChecker, PlayerCombat combat) : base(player, animator, groundChecker, combat) { }
 
     public override void OnEnter()
     {

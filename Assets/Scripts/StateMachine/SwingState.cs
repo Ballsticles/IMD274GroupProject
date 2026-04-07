@@ -3,7 +3,7 @@ using UnityEngine;
 public class SwingState : BaseState
 {
     
-    public SwingState(PlayerMotor player, Animator animator, GroundChecker groundChecker) : base(player, animator, groundChecker)
+    public SwingState(PlayerMotor player, Animator animator, GroundChecker groundChecker, PlayerCombat combat) : base(player, animator, groundChecker, combat)
     {
     }
 

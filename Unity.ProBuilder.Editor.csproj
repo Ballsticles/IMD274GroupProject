@@ -191,8 +191,8 @@
     <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\UVEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Object\SetTrigger.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\ShapeMenuItems.cs" />
-    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\VertexOnFaceEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\MenuActions\Interaction\ToggleXRay.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\VertexOnFaceEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\HandleGUI.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\Overlays\SelectionSettingsButtons.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@1f279ab829b7\Editor\EditorCore\RepairActions.cs" />

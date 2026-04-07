@@ -5,6 +5,7 @@ public abstract class BaseState : IStates
     protected readonly PlayerMotor player;
     protected readonly Animator animator;
     protected readonly GroundChecker groundChecker;
+    protected readonly PlayerCombat combat;
 
     protected static readonly int LocomotionHash = Animator.StringToHash("Locomotion");
     protected static readonly int JumpHash = Animator.StringToHash("Jump");
@@ -16,11 +17,12 @@ public abstract class BaseState : IStates
 
     protected const float crossFadeDuration = 0.1f;
 
-    protected BaseState(PlayerMotor player, Animator animator, GroundChecker groundChecker)
+    protected BaseState(PlayerMotor player, Animator animator, GroundChecker groundChecker, PlayerCombat combat)
     {
         this.player = player;
         this.animator = animator;
         this.groundChecker = groundChecker;
+        this.combat = combat;
     }
 
     public virtual void OnEnter()

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b442c1ebba5ab48b351d47aabafde6, type: 3}
+  m_Name: Attack1
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSO
+  damage: 1
+  animatorOV: {fileID: 22100000, guid: 6ca85891466cbd44b8945a82922131ef, type: 2}
+  hurtCollider: {fileID: -1147328369986369265, guid: f0232a7df2ca1fb4c993059c1b988a1b, type: 3}
