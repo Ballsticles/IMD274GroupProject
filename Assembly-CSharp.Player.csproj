@@ -61,35 +61,45 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\CombatReadyState.cs" />
     <Compile Include="Assets\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\StateMachine\IStates.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\LocomotionState.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\LedgeState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\FuncPredicate.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\FallState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\IPredicate.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\HealState.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\DieState.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\HealItem.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\BaseCombatState.cs" />
     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\LocomotionState.cs" />
+    <Compile Include="Assets\Scripts\HealthHeart.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\OutCombatState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\InputSystem\InputManager.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\JumpState.cs" />
     <Compile Include="Assets\Scripts\IDamagable.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\DiveState.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\StateMachine\Transition.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\HurtState.cs" />
     <Compile Include="Assets\Scripts\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\StateMachine\BaseState.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\AttackSO.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\JumpState.cs" />
+    <Compile Include="Assets\Scripts\HeartsBarManager.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\AttackState.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\FallState.cs" />
     <Compile Include="Assets\Scripts\GrappleScript.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\SwingState.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\StateMachine\ITransition.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\LedgeState.cs" />
-    <Compile Include="Assets\Scripts\StateMachine\DiveState.cs" />
     <Compile Include="Assets\Scripts\LedgeChecker.cs" />
+    <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\SwingState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -1,55 +1,129 @@
+
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class PlayerCombat : MonoBehaviour
 {
+    [Header("Attacks")]
     [SerializeField] int attackRange;
     public List<AttackSO> combo;
+    int comboCounter;
     List<Timer> timers;
+    [Header("Timers")]
     [SerializeField] float attackCD = 0.5f;
     CountdownTimer attackCDTimer;
     [SerializeField] float comboCD = 0.2f;
     CountdownTimer comboCDTimer;
-    int comboCounter;
-    [SerializeField] InputManager inputManager;
+    [SerializeField] float hurtTime = 0.4f;
+    CountdownTimer hurtTimer;
+    [SerializeField] float outOfCombatTime = 1f;
+    CountdownTimer outOfCombatTimer;
+    [SerializeField] float healTime = 0.2f;
+    CountdownTimer healTimer;
+
+    [Header("Timer Progress")]
     [SerializeField] float attackCDProgress;
     [SerializeField] float comboCDProgress;
+    [SerializeField] float hurtTimerProgress;
+    [SerializeField] float combatCountdownProgress;
+
+    [Header("References")]
+    [SerializeField] InputManager inputManager;
+    [SerializeField] PlayerHealth playerHealth;
+    PlayerInputActions inputActions;
+    [SerializeField] Animator combatHUD;
     Animator anim;
     [SerializeField]private GameObject currWeaponCollider;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+
+    //statemachine stuffs
+    StateMachine combatStateMachine;
+    public string currentState;
+     bool attacking = false;
+     bool dying = false;
+     bool inCombat = false;
+     
     void OnEnable()
     {
-     
         inputManager.Attack += OnAttack;
-       
+        PlayerHealth.OnPlayerDamaged += OnHurt;
+        PlayerHealth.OnPlayerHeal += OnHeal;
+        PlayerHealth.OnPlayerDeath += OnDie;
     }
 
     void OnDisable()
     {
   
         inputManager.Attack -= OnAttack;
-        
+        PlayerHealth.OnPlayerDamaged -= OnHurt;
+        PlayerHealth.OnPlayerHeal -= OnHeal;
+        PlayerHealth.OnPlayerDeath -= OnDie;
     }
     void Awake()
     {
         attackCDTimer = new CountdownTimer(attackCD);
         comboCDTimer = new CountdownTimer(comboCD);
-
-        timers = new List<Timer>(2) { attackCDTimer, comboCDTimer};
+        hurtTimer = new CountdownTimer(hurtTime);
+        outOfCombatTimer = new CountdownTimer(outOfCombatTime);
+        healTimer = new CountdownTimer(healTime);
+        timers = new List<Timer>(2) { attackCDTimer, comboCDTimer, hurtTimer, outOfCombatTimer, healTimer};
         
+        inputActions = inputManager.inputActions;
         anim = GetComponent<Animator>();
-    }
+        playerHealth = GetComponent<PlayerHealth>();
+        combatHUD = GameObject.FindGameObjectWithTag("CombatUI").GetComponent<Animator>();
 
+        comboCDTimer.onTimerStop += () => outOfCombatTimer.Start();
+        hurtTimer.onTimerStop += () => outOfCombatTimer.Start();
+        healTimer.onTimerStop += () => outOfCombatTimer.Start();
+        outOfCombatTimer.onTimerStart += () => inCombat = true;
+        outOfCombatTimer.onTimerStop += () => inCombat = false;
+
+        combatStateMachine = new StateMachine();
+
+        //states stuffs
+        var attackState = new AttackState(inputActions, anim, combatHUD, playerHealth);
+        var combatReadyState = new CombatReadyState(inputActions, anim, combatHUD, playerHealth);
+        var dieState = new DieState(inputActions, anim, combatHUD, playerHealth);
+        var HurtState = new HurtState(inputActions, anim, combatHUD, playerHealth);
+        var outCombatState = new OutCombatState(inputActions, anim, combatHUD, playerHealth);
+        var healState = new HealState(inputActions, anim, combatHUD, playerHealth);
+
+        Any(attackState, new FuncPredicate(() => attacking));
+        At(attackState, combatReadyState, new FuncPredicate(()=> !attacking && inCombat));
+
+        Any(healState, new FuncPredicate(() => healTimer.IsRunning));
+
+        Any(HurtState, new FuncPredicate(()=> hurtTimer.IsRunning && !dying));
+        At(HurtState, combatReadyState, new FuncPredicate(() => !hurtTimer.IsRunning && inCombat));
+
+        Any(dieState, new FuncPredicate(() => dying));
+
+        At(combatReadyState, outCombatState, new FuncPredicate(() => !inCombat));
+        Any(combatReadyState, new FuncPredicate(() => inCombat && (!dying || !attacking || !hurtTimer.IsRunning || !healTimer.IsRunning)));
+
+        At(outCombatState, combatReadyState, new FuncPredicate(() => inCombat));
+        Any(outCombatState, new FuncPredicate(()=> !inCombat && (!dying || !attacking || !hurtTimer.IsRunning || !healTimer.IsRunning)));
+
+
+        combatStateMachine.SetState(outCombatState);
+
+    }
+    void At(IStates from, IStates to, IPredicate condition) => combatStateMachine.AddTransition(from, to, condition);
+    void Any(IStates to, IPredicate condition) => combatStateMachine.AddAnyTransition(to, condition);
     // Update is called once per frame
     void Update()
     {
         TickTimers();
         ExitAttack();
+        combatStateMachine.Update();
 
         attackCDProgress = attackCDTimer.Progress;
         comboCDProgress = comboCDTimer.Progress;
-
+        hurtTimerProgress = hurtTimer.Progress;
+        combatCountdownProgress = outOfCombatTimer.Progress;
+        currentState = combatStateMachine.current.State.ToString();
     }
     public void OnAttack(bool performed)
     {
@@ -57,13 +131,25 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
-        if (!performed)
-        {
-            //noop
-        }
+    }
+
+    public void OnHurt()
+    {
+        hurtTimer.Start();
+        
+    }
+    public void OnDie()
+    {
+        dying = true;
+    }
+    public void OnHeal()
+    {
+        healTimer.Start();
+
     }
     void Attack()
     {
+        
         //check if the combo is on cooldown and the attack is below the max combo.
         if (!comboCDTimer.IsRunning && comboCounter <= combo.Count)
         {
@@ -73,7 +159,9 @@ public class PlayerCombat : MonoBehaviour
             //check if attack is on cooldown
             if (!attackCDTimer.IsRunning)
             {
-               
+                attacking = true;
+                
+                outOfCombatTimer.Start();
                 AttackSO attack = combo[comboCounter];
                 anim.runtimeAnimatorController = attack.animatorOV;
 
@@ -97,14 +185,17 @@ public class PlayerCombat : MonoBehaviour
                 anim.Play("Attack", 1, 0);
                 comboCounter++;
                 
-                attackCDTimer.Start();
+                attackCDTimer.Start();         
+                
+                if (comboCounter >= combo.Count)
+                {
+                    comboCounter = 0;
+                    comboCDTimer.Start();
+                }
+
             }
 
-            if (comboCounter >= combo.Count)
-            {
-                comboCounter = 0;
-                comboCDTimer.Start();
-            }
+
 
         }
 
@@ -115,12 +206,14 @@ public class PlayerCombat : MonoBehaviour
         if (!attackCDTimer.IsRunning)
         {
             Destroy(currWeaponCollider);
+            attacking = false;
         }
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > .9 && anim.GetCurrentAnimatorStateInfo(1).IsTag("Attack"))
         {
             Invoke("EndCombo", 1);
             
         }
+        
     }
 
     void EndCombo()
@@ -128,6 +221,8 @@ public class PlayerCombat : MonoBehaviour
         comboCounter = 0;
 
         comboCDTimer.Start();
+
+        outOfCombatTimer.Start();
     }
     void TickTimers()
     {

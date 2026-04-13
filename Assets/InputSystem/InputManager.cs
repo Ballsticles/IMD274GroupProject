@@ -16,7 +16,7 @@ public class InputManager : ScriptableObject, IPlayerActions
     public event UnityAction<bool> Grab = delegate { };
     public event UnityAction<bool> Attack = delegate { };
 
-    PlayerInputActions inputActions;
+    public PlayerInputActions inputActions;
 
     public Vector3 Direction => inputActions.Player.Move.ReadValue<Vector2>();
 

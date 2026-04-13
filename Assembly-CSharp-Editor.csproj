@@ -1307,6 +1307,10 @@
       <Project>{EB80AE43-6582-C5A7-0D4D-B1238C9C877E}</Project>
       <Name>Unity.RenderPipelines.Core.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{37232858-3E32-DDAD-9459-D6576E630066}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.Analytics.csproj">
       <Project>{457F98E9-C24E-DC88-A5E9-2B0098DC77D7}</Project>
       <Name>UnityEditor.UI.Analytics</Name>
@@ -1343,13 +1347,13 @@
       <Project>{3096BE5D-FBB8-58EF-AEBE-5B5AE96FB75A}</Project>
       <Name>Unity.RenderPipelines.Universal.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{E683E4EC-4C1D-3EC9-40FD-5AFC09442389}</Project>
-      <Name>Unity.Timeline</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
       <Project>{1AE74FF9-3AFF-3FEE-A41B-7CD3A0F8E8B3}</Project>
       <Name>Unity.AI.Navigation.Updater</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{E683E4EC-4C1D-3EC9-40FD-5AFC09442389}</Project>
+      <Name>Unity.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
       <Project>{551CCC7A-2C60-8E38-708F-D79D9E03EF97}</Project>
