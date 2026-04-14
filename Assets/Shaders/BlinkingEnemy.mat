@@ -46,11 +46,11 @@ Material:
     - _Metallic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _blinkFactor: 0
     m_Colors:
-    - _Base_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
-    - _BlinkColor: {r: 1, g: 0, b: 0, a: 1}
+    - _Base_Color: {r: 0.44536537, g: 0.4339178, b: 0.46226418, a: 1}
+    - _BlinkColor: {r: 0.46962643, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3902279539578860601
