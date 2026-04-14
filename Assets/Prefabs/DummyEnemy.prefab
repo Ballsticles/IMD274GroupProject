@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 3509771770522717248}
   - component: {fileID: 3069205150189791654}
   - component: {fileID: -5143531686046831347}
+  - component: {fileID: 6322200411916174208}
   m_Layer: 10
   m_Name: DummyEnemy
   m_TagString: Untagged
@@ -578,7 +579,6 @@ MonoBehaviour:
   maxHealth: 5
   health: 5
   invincible: 0
-  blinkMaterial: {fileID: 2100000, guid: 8385cab63b8f20849991feb3ca91e936, type: 2}
   hitEffectPrefab: {fileID: 6636182837753471861, guid: eefd5d8ecf50a00458e6ccb3c1e67e5c, type: 3}
   healthBar: {fileID: 839664474989849506}
   healthBarEnabled: 0
@@ -604,6 +604,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6322200411916174208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7485881433325133114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5671d9b5f0f7a84d9cbfe2de83fcb07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageFlash
+  flashColor: {r: 0.37244126, g: 0, b: 0.9150943, a: 1}
+  flashTime: 0.25
 --- !u!1001 &782281198300374867
 PrefabInstance:
   m_ObjectHideFlags: 0

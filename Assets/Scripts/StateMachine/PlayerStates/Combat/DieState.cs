@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class DieState : BaseCombatState
 {
-    public DieState(PlayerInputActions input, Animator animator, Animator combatHUD, PlayerHealth playerHealth) : base(input, animator, combatHUD, playerHealth) { }
+    public DieState(PlayerCombat combat, Animator animator, Animator combatHUD, PlayerHealth playerHealth) : base(combat, animator, combatHUD, playerHealth) { }
 
     public override void OnEnter()
     {
-        DisableAllInputs();
+        combat.DisableActions();
         animator.CrossFade(DieHash, crossFadeDuration);
     }
 

@@ -20,7 +20,7 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] float movementSpeed = 6;
     [SerializeField] float rotationSpeed = 15;
     [SerializeField] float smoothTime = 0.2f;
-    
+    private bool pauseMovement = false;
 
     [Header ("Jump Settings")]
     [SerializeField] float jumpForce = 10;
@@ -75,6 +75,7 @@ public class PlayerMotor : MonoBehaviour
 
     bool unlockedDoubleJump = true;
     [Header("Testing Options")]
+    [SerializeField] float moveFalloff = 1f;
     [SerializeField] bool diveIsJump;
     [SerializeField] bool swingResetDive;
     [SerializeField] float fallTimerProgress;
@@ -182,6 +183,21 @@ public class PlayerMotor : MonoBehaviour
         inputManager.EnablePlayerActions();
     }
 
+    
+
+
+    public void StopMovement()
+    {
+        pauseMovement = true;
+        inputManager.DisableMovementActions();
+    }
+    public void ContinueMovement()
+    {
+        pauseMovement = false;
+        inputManager.EnableMovementActions();
+    }
+
+
     void OnEnable()
     {
         inputManager.Jump += OnJump;
@@ -241,10 +257,20 @@ public class PlayerMotor : MonoBehaviour
             fallTimerProgress = swingFallTimer.Progress;
 
         }
-        
-        movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
+        if(!pauseMovement)
+        {
+            movement = new Vector3(inputManager.Direction.x, 0f, inputManager.Direction.y);
+        }
+        else
+        {
+            var previousMovement = movement;
+            
+            var lerpMovement = Vector3.Lerp(previousMovement, new Vector3(0,0,0), Time.deltaTime * moveFalloff);
+            movement = lerpMovement;
+        }
 
-        stateMachine.Update();
+
+            stateMachine.Update();
 
         HandleTimers();
         UpdateAnimator();

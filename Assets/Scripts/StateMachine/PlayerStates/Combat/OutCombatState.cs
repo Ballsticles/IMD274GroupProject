@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class OutCombatState : BaseCombatState
 {
-    public OutCombatState(PlayerInputActions input, Animator animator, Animator combatHUD, PlayerHealth playerHealth) : base(input, animator, combatHUD, playerHealth)
+    public OutCombatState(PlayerCombat combat, Animator animator, Animator combatHUD, PlayerHealth playerHealth) : base(combat, animator, combatHUD, playerHealth)
     {
     }
     public override void OnEnter()

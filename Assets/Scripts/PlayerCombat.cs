@@ -30,6 +30,7 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("References")]
     [SerializeField] InputManager inputManager;
+    [SerializeField] PlayerMotor playerMotor;
     [SerializeField] PlayerHealth playerHealth;
     PlayerInputActions inputActions;
     [SerializeField] Animator combatHUD;
@@ -72,6 +73,7 @@ public class PlayerCombat : MonoBehaviour
         inputActions = inputManager.inputActions;
         anim = GetComponent<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
+        playerMotor = GetComponent<PlayerMotor>();
         combatHUD = GameObject.FindGameObjectWithTag("CombatUI").GetComponent<Animator>();
 
         comboCDTimer.onTimerStop += () => outOfCombatTimer.Start();
@@ -83,12 +85,12 @@ public class PlayerCombat : MonoBehaviour
         combatStateMachine = new StateMachine();
 
         //states stuffs
-        var attackState = new AttackState(inputActions, anim, combatHUD, playerHealth);
-        var combatReadyState = new CombatReadyState(inputActions, anim, combatHUD, playerHealth);
-        var dieState = new DieState(inputActions, anim, combatHUD, playerHealth);
-        var HurtState = new HurtState(inputActions, anim, combatHUD, playerHealth);
-        var outCombatState = new OutCombatState(inputActions, anim, combatHUD, playerHealth);
-        var healState = new HealState(inputActions, anim, combatHUD, playerHealth);
+        var attackState = new AttackState(this, anim, combatHUD, playerHealth);
+        var combatReadyState = new CombatReadyState(this, anim, combatHUD, playerHealth);
+        var dieState = new DieState(this, anim, combatHUD, playerHealth);
+        var HurtState = new HurtState(this, anim, combatHUD, playerHealth);
+        var outCombatState = new OutCombatState(this, anim, combatHUD, playerHealth);
+        var healState = new HealState(this, anim, combatHUD, playerHealth);
 
         Any(attackState, new FuncPredicate(() => attacking));
         At(attackState, combatReadyState, new FuncPredicate(()=> !attacking && inCombat));
@@ -200,7 +202,6 @@ public class PlayerCombat : MonoBehaviour
         }
 
     }
-
     void ExitAttack()
     {
         if (!attackCDTimer.IsRunning)
@@ -215,7 +216,6 @@ public class PlayerCombat : MonoBehaviour
         }
         
     }
-
     void EndCombo()
     {
         comboCounter = 0;
@@ -231,4 +231,22 @@ public class PlayerCombat : MonoBehaviour
             timer.Tick(Time.deltaTime);
         }
     }
+
+    public void StopMovement()
+    {
+        playerMotor.StopMovement();
+    }
+    public void StartMovement()
+    {
+        playerMotor.ContinueMovement();
+    }
+    public void DisableActions()
+    {
+        inputManager.DisablePlayerActions();
+    }
+    public void EnableActions()
+    {
+        inputManager.EnablePlayerActions();
+    }
+
 }

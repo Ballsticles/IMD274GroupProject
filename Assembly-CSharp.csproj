@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\AttackState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\FallState.cs" />
+    <Compile Include="Assets\Scripts\DamageFlash.cs" />
     <Compile Include="Assets\Scripts\GrappleScript.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\StateMachine\ITransition.cs" />

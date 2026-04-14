@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class BaseCombatState : IStates
 {
-    protected readonly PlayerInputActions input;
+    protected readonly PlayerCombat combat;
     protected readonly Animator animator;
     protected readonly Animator combatHUD;
     protected readonly PlayerHealth playerHealth;
@@ -12,9 +12,9 @@ public abstract class BaseCombatState : IStates
     protected static readonly int LocomotionHash = Animator.StringToHash("Locomotion");
 
     protected const float crossFadeDuration = 0.1f;
-    protected BaseCombatState(PlayerInputActions input, Animator animator, Animator combatHUD, PlayerHealth playerHealth)
+    protected BaseCombatState(PlayerCombat combat, Animator animator, Animator combatHUD, PlayerHealth playerHealth)
     {
-        this.input = input;
+        this.combat = combat;
         this.animator = animator;
         this.combatHUD = combatHUD; 
         this.playerHealth = playerHealth;
@@ -40,28 +40,6 @@ public abstract class BaseCombatState : IStates
     {
         
     }
-    public virtual void DisableAllInputs()
-    {
-        input.Player.Disable();
-    }
-    public virtual void EnableAllInputs()
-    {
-        input.Player.Enable();
-    }
-    public virtual void DisableMovementInputs()
-    {
-        input.FindAction("Move").Disable();
-        input.FindAction("Jump").Disable();
-        input.FindAction("Grab").Disable();
-        input.FindAction("Interact").Disable();
 
-    }
-    public virtual void EnableMovementInputs()
-    {
-        input.FindAction("Move").Enable();
-        input.FindAction("Jump").Enable();
-        input.FindAction("Grab").Enable();
-        input.FindAction("Interact").Enable();
-    }
 
 }

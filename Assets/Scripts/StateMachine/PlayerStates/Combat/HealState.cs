@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealState : BaseCombatState
 {
-    public HealState(PlayerInputActions input, Animator animator, Animator combatHUD, PlayerHealth playerHealth) : base(input, animator, combatHUD, playerHealth)
+    public HealState(PlayerCombat combat, Animator animator, Animator combatHUD, PlayerHealth playerHealth) : base(combat, animator, combatHUD, playerHealth)
     {
     }
     public override void OnEnter()

@@ -6,38 +6,28 @@ public class BaseDamagable : MonoBehaviour, IDamagable
     public int maxHealth;
     public int health;
     public bool invincible = false;
-    public Material blinkMaterial;
+    private DamageFlash flash;
+
     public GameObject hitEffectPrefab;
     private ParticleSystem hitEffect;
     public virtual void Awake()
     {
         health = maxHealth;
-        if(hitEffect != null)
-        {
-            GameObject hiteffectObj = Instantiate(hitEffectPrefab);
-            hitEffect = hiteffectObj.GetComponent<ParticleSystem>();
-            
-        }
-
+        flash = GetComponent<DamageFlash>();
     }
-    IEnumerator DamageFlashEffect()
-    {
-        blinkMaterial.SetFloat("blinkFactor", .5f);
 
-        yield return new WaitForSeconds(.5f);
 
-        blinkMaterial.SetFloat("blinkFactor", 0f);
-
-    }
     public virtual void TakeDamage(int damage)
     {
         if (!invincible)
         {
             health -= damage;
-            if(blinkMaterial != null)
+    
+            if(flash != null)
             {
-                StartCoroutine(DamageFlashEffect());
+                flash.CallDamageFlash();
             }
+            
             if(hitEffect != null)
             {
                 if (hitEffect.gameObject.activeSelf)
@@ -80,6 +70,9 @@ public class BaseDamagable : MonoBehaviour, IDamagable
         {
             Die();
         }
+
+
+
     }
 
     public virtual void UpdateHealth()

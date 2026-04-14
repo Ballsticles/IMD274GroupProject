@@ -42,8 +42,25 @@ public class InputManager : ScriptableObject, IPlayerActions
         inputActions.Enable();
         
     }
+    public void DisablePlayerActions()
+    {
+        inputActions.Disable();
+    }
+    public void DisableMovementActions()
+    {
+        inputActions.FindAction("Move").Disable();
+        inputActions.FindAction("Jump").Disable();
+        inputActions.FindAction("Grab").Disable();
+        inputActions.FindAction("Interact").Disable();
 
-
+    }
+    public void EnableMovementActions()
+    {
+        inputActions.FindAction("Move").Enable();
+        inputActions.FindAction("Jump").Enable();
+        inputActions.FindAction("Grab").Enable();
+        inputActions.FindAction("Interact").Enable();
+    }
     public void OnAttack(InputAction.CallbackContext context)
     {
         switch (context.phase)
