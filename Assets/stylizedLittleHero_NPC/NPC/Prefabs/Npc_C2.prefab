@@ -111,7 +111,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 16d62960a6799d3438fa2e8403b9ee1a, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 0caa3971622a07543b7f6ca0b4686e9d, type: 2}
     - target: {fileID: 919132149155446097, guid: 16d62960a6799d3438fa2e8403b9ee1a, type: 3}
@@ -247,7 +247,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8430583284426259419, guid: 438ce326eede0ad46885d4ef76b65d51, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ef47ce2226ef2c74897d225cb6408038, type: 2}
     m_RemovedComponents: []
@@ -279,7 +279,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &3612789772446980538
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -293,6 +293,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
