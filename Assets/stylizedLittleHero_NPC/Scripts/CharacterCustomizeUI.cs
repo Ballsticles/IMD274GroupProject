@@ -53,7 +53,7 @@ public class CharacterCustomizeUI : MonoBehaviour
         // Auto-find partSwapper
         if (partSwapper == null)
         {
-            partSwapper = FindObjectOfType<CharacterPartSwapper>();
+            partSwapper = FindFirstObjectByType<CharacterPartSwapper>();
         }
 
         if (partSwapper == null)

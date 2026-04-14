@@ -79,7 +79,9 @@
     <Compile Include="Assets\Scripts\ScriptableObjects\AttackSO.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\JumpState.cs" />
     <Compile Include="Assets\Scripts\HeartsBarManager.cs" />
+    <Compile Include="Assets\stylizedLittleHero_NPC\Scripts\CharacterCustomizeUI.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
+    <Compile Include="Assets\stylizedLittleHero_NPC\Scripts\CharacterPartSwapper.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\AttackState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\FallState.cs" />
@@ -89,6 +91,11 @@
     <Compile Include="Assets\Scripts\StateMachine\ITransition.cs" />
     <Compile Include="Assets\Scripts\LedgeChecker.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\SwingState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\stylizedLittleHero_NPC\Documentation.txt" />
+    <None Include="Assets\stylizedLittleHero_NPC\CHANGELOG.txt" />
+    <None Include="Assets\stylizedLittleHero_NPC\README.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
