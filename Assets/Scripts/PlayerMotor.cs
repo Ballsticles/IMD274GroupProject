@@ -271,7 +271,7 @@ public class PlayerMotor : MonoBehaviour
         }
 
 
-            stateMachine.Update();
+        stateMachine.Update();
 
         HandleTimers();
         UpdateAnimator();
@@ -364,6 +364,7 @@ public class PlayerMotor : MonoBehaviour
         //if jumping or falling calculate velocity
         if (!jumpTimer.IsRunning)
         {
+
             //gravity Takes over
             jumpVelocity += Physics.gravity.y * gravityMultiplier * Time.fixedDeltaTime;
 
