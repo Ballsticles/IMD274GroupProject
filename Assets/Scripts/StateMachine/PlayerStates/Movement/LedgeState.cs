@@ -8,11 +8,17 @@ public class LedgeState : BaseState
     public override void OnEnter()
     {
         animator.CrossFade(LedgeHash, crossFadeDuration);
+        combat.canAttack = false;
     }
     public override void FixedUpdate()
     {
         player.HandleJump();
         
+        
     }
-
+    public override void OnExit()
+    {
+        base.OnExit();
+        combat.canAttack = true;
+    }
 }

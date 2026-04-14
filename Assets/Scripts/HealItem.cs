@@ -9,7 +9,7 @@ public class HealItem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         IDamagable damagable = other.GetComponent<IDamagable>();
-        Debug.Log("hit" + damagable);
+        //Debug.Log("hit" + damagable);
         if (damagable != null)
         {
             damagable.HealHealth(incomingHealth);

@@ -12,11 +12,13 @@ public class SwingState : BaseState
         
         animator.CrossFade(SwingHash, crossFadeDuration);
         player.swinging = true;
+        combat.canAttack = false;
     }
 
     public override void OnExit()
     {
         player.swinging = false;
         player.StartFallTimer();
+        combat.canAttack = true;
     }
 }

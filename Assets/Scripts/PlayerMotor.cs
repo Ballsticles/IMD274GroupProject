@@ -89,7 +89,8 @@ public class PlayerMotor : MonoBehaviour
         cameraObject = Camera.main.transform;
         groundCheck = GetComponent<GroundChecker>();
         ledgeChecker = GetComponent<LedgeChecker>();
-        
+        combat = GetComponent<PlayerCombat>();
+
         rb.freezeRotation = true;
 
         gravityMultiplier = gravMult;

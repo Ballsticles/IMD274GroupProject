@@ -41,6 +41,7 @@ public class PlayerCombat : MonoBehaviour
     //statemachine stuffs
     StateMachine combatStateMachine;
     public string currentState;
+    public bool canAttack = true;
      bool attacking = false;
      bool dying = false;
      bool inCombat = false;
@@ -129,7 +130,7 @@ public class PlayerCombat : MonoBehaviour
     }
     public void OnAttack(bool performed)
     {
-        if(performed)
+        if(performed && canAttack)
         {
             Attack();
         }

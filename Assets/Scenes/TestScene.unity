@@ -29323,6 +29323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4514724282074855801, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
+      propertyPath: maxHealth
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5846001460748413520, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
       value: 0.0028419495
@@ -29362,6 +29366,10 @@ PrefabInstance:
     - target: {fileID: 7058355104566499166, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
       propertyPath: moveFalloff
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058355104566499166, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
+      propertyPath: swingResetDive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8248774202387038206, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
       propertyPath: grappled
