@@ -129,6 +129,11 @@ public class PlayerMotor : MonoBehaviour
             gravityMultiplier = gravMult / 2;
             jumpVelocity = ZeroF;
         };
+        swingFallTimer.onTimerStop += () =>
+        {
+            gravityMultiplier = gravMult;
+            jumpVelocity += rb.linearVelocity.y;
+        };
 
         timers = new List<Timer>(5) {jumpTimer, jumpCooldownTimer , diveTimer , diveCooldownTimer, swingFallTimer};
 
@@ -364,9 +369,13 @@ public class PlayerMotor : MonoBehaviour
         //if jumping or falling calculate velocity
         if (!jumpTimer.IsRunning)
         {
+            if(jumpVelocity > -20f)
+            {
+   
+                //gravity Takes over
+                jumpVelocity += Physics.gravity.y * gravityMultiplier * Time.fixedDeltaTime;
+            }
 
-            //gravity Takes over
-            jumpVelocity += Physics.gravity.y * gravityMultiplier * Time.fixedDeltaTime;
 
         }
 
