@@ -77,8 +77,9 @@ MonoBehaviour:
   swingFloatDuration: 1
   swinging: 0
   currentState: 
+  moveFalloff: 3
   diveIsJump: 1
-  swingResetDive: 1
+  swingResetDive: 0
   fallTimerProgress: 0
 --- !u!136 &8332499446293639060
 CapsuleCollider:
@@ -391,10 +392,12 @@ MonoBehaviour:
   hurtTimerProgress: 0
   combatCountdownProgress: 0
   inputManager: {fileID: 11400000, guid: 4fe08538442547e4a9c2485b6fa946c7, type: 2}
+  playerMotor: {fileID: 0}
   playerHealth: {fileID: 0}
   combatHUD: {fileID: 0}
   currWeaponCollider: {fileID: 0}
   currentState: 
+  canAttack: 1
 --- !u!114 &4514724282074855801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc56d835cc0873748a9b1e3ff4e0dbcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 16
+  maxHealth: 12
   health: 0
   invincible: 0
   hitEffectPrefab: {fileID: 6636182837753471861, guid: eefd5d8ecf50a00458e6ccb3c1e67e5c, type: 3}
@@ -425,6 +428,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageFlash
   flashColor: {r: 1, g: 0, b: 0, a: 1}
   flashTime: 1
+  meshRenderers: []
+  materials: []
 --- !u!1 &8514579514958220608
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,22 +777,22 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.52564216
-        inSlope: -0.8123048
-        outSlope: -0.8123048
+        time: 0.0028419495
+        value: 0.53205085
+        inSlope: -2.256428
+        outSlope: -2.256428
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.14204544
+        outWeight: 0.20418485
       - serializedVersion: 3
-        time: 0.67614746
+        time: 0.5454601
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.28716916
+        outSlope: -0.28716916
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.28796604
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
