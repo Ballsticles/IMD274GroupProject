@@ -1,14 +1,7 @@
 fileFormatVersion: 2
-guid: 036060ff17c10e043bc489845834d09e
+guid: d89f2b40c62bd594f806a5942746ab01
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 252435
-  packageName: Stylize Nature Pack
-  packageVersion: 1.0
-  assetPath: Assets/LowPolyBoy/StylizeNaturePack/Prefabs/lpb_cs_tree18.prefab
-  uploadId: 577211
