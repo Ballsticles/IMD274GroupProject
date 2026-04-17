@@ -96,6 +96,7 @@
   <ItemGroup>
     <None Include="Assets\stylizedLittleHero_NPC\Documentation.txt" />
     <None Include="Assets\stylizedLittleHero_NPC\CHANGELOG.txt" />
+    <None Include="Assets\DiverseSpace\Diverse Space Skybox Readme.txt" />
     <None Include="Assets\stylizedLittleHero_NPC\README.txt" />
   </ItemGroup>
   <ItemGroup>
