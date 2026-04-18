@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf1aba9553839d41ae37dd52e9ebcce, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   quality:
     m_OverrideState: 0
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 1
   clamp:
     m_OverrideState: 0
     m_Value: 0.05
@@ -57,6 +57,9 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
+    m_OverrideState: 0
+    m_Value: 0
+  filter:
     m_OverrideState: 0
     m_Value: 0
   downscale:
@@ -96,7 +99,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 115
   saturation:
     m_OverrideState: 1
     m_Value: 7.7
@@ -172,39 +175,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 24.15
+    m_Value: 50
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 34.2
+    m_Value: 50
   gaussianMaxRadius:
     m_OverrideState: 1
-    m_Value: 1.07
+    m_Value: 0.5
   highQualitySampling:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 10
   aperture:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 5.6
   focalLength:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 50
   bladeCount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 5
   bladeCurvature:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   bladeRotation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
 --- !u!114 &4549121008174841165
 MonoBehaviour:
@@ -249,10 +252,10 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.8490566, g: 0.6381274, b: 0.71345925, a: 1}
+    m_Value: {r: 0.44526416, g: 0.2249911, b: 0.6037736, a: 1}
   highlights:
-    m_OverrideState: 0
-    m_Value: {r: 0.7735849, g: 0.53761715, b: 0.6492638, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.43387324, g: 0.59729713, b: 0.735849, a: 1}
   balance:
     m_OverrideState: 1
     m_Value: 35

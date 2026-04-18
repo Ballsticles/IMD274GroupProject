@@ -26,6 +26,7 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] float jumpForce = 10;
     [SerializeField] float jumpDuration = 0.5f;
     [SerializeField] float jumpCooldown = 0f;
+    [SerializeField] float maxFallSpeed = -30f;
     public float gravMult = 3f;
     float gravityMultiplier;
     
@@ -110,6 +111,7 @@ public class PlayerMotor : MonoBehaviour
         
         diveTimer.onTimerStart += () =>
         {
+            swingFallTimer.Stop();
             if (!diveIsJump)
             {
                 diveVelocity = diveHorForce;
@@ -131,7 +133,7 @@ public class PlayerMotor : MonoBehaviour
         };
         swingFallTimer.onTimerStop += () =>
         {
-            gravityMultiplier = gravMult;
+            gravityMultiplier = gravMult / 1.6f;
             jumpVelocity += rb.linearVelocity.y;
         };
 
@@ -369,7 +371,7 @@ public class PlayerMotor : MonoBehaviour
         //if jumping or falling calculate velocity
         if (!jumpTimer.IsRunning)
         {
-            if(jumpVelocity > -20f)
+            if(jumpVelocity > maxFallSpeed)
             {
    
                 //gravity Takes over
