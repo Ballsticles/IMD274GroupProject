@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6819339105784395233}
   - component: {fileID: 4824380684918915542}
   - component: {fileID: 4236046818705473457}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: lpb_cs_tree21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
