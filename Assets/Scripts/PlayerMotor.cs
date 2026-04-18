@@ -26,7 +26,7 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] float jumpForce = 10;
     [SerializeField] float jumpDuration = 0.5f;
     [SerializeField] float jumpCooldown = 0f;
-    [SerializeField] float maxFallSpeed = -30f;
+    [SerializeField] float maxFallSpeed = 30f;
     public float gravMult = 3f;
     float gravityMultiplier;
     
