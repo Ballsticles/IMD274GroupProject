@@ -131,7 +131,7 @@ public class PlayerMotor : MonoBehaviour
         };
         swingFallTimer.onTimerStop += () =>
         {
-            gravityMultiplier = gravMult;
+            //gravityMultiplier = gravMult;
             jumpVelocity += rb.linearVelocity.y;
         };
 

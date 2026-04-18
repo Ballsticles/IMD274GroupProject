@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\JumpState.cs" />
     <Compile Include="Assets\Scripts\HeartsBarManager.cs" />
     <Compile Include="Assets\stylizedLittleHero_NPC\Scripts\CharacterCustomizeUI.cs" />
+    <Compile Include="Assets\Scripts\SkyboxRotatorScript.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
     <Compile Include="Assets\stylizedLittleHero_NPC\Scripts\CharacterPartSwapper.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
