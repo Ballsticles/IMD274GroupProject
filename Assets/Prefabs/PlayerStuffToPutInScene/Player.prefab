@@ -68,6 +68,7 @@ MonoBehaviour:
   jumpForce: 5
   jumpDuration: 0.4
   jumpCooldown: 0
+  maxFallSpeed: -30
   gravMult: 2
   diveHorForce: 5
   diveVertForce: 8
