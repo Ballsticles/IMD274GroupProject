@@ -15,3 +15,4 @@ MonoBehaviour:
   damage: 1
   animatorOV: {fileID: 22100000, guid: 6ca85891466cbd44b8945a82922131ef, type: 2}
   hurtCollider: {fileID: -1147328369986369265, guid: f0232a7df2ca1fb4c993059c1b988a1b, type: 3}
+  attackSound: {fileID: 8300000, guid: b701cc9a5f5ebaa4c914fa4e419a939c, type: 3}

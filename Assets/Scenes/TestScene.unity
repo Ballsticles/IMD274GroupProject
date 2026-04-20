@@ -28743,6 +28743,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 315367036302226465, guid: 64210a630ec46174fb7d40785f82c7e5, type: 3}
+      propertyPath: healSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 315367036302226465, guid: 64210a630ec46174fb7d40785f82c7e5, type: 3}
+      propertyPath: 'healSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: cfab7c6bb2dca554da3584d886345ce5, type: 3}
     - target: {fileID: 1199042971652960236, guid: 64210a630ec46174fb7d40785f82c7e5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
