@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DamageFlash : MonoBehaviour
 {
+    [ColorUsage(true, true)]
     [SerializeField] private Color flashColor = Color.white;
     [SerializeField] private float flashTime = .25f;
     [SerializeField] private Renderer[] meshRenderers;

@@ -74,7 +74,7 @@ public class PlayerMotor : MonoBehaviour
     CountdownTimer swingFallTimer;
 
 
-    bool unlockedDoubleJump = true;
+    public bool unlockedDoubleJump = true;
     [Header("Testing Options")]
     [SerializeField] float moveFalloff = 1f;
     [SerializeField] bool diveIsJump;
