@@ -149,7 +149,7 @@ MonoBehaviour:
   coyoteProgress: 0
   groundLayers:
     serializedVersion: 2
-    m_Bits: 833
+    m_Bits: 9025
 --- !u!114 &6547620297370544148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +396,13 @@ MonoBehaviour:
   playerHealth: {fileID: 0}
   combatHUD: {fileID: 0}
   currWeaponCollider: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+  combatAudio: {fileID: 500915678337981702}
+  hurtSounds:
+  - {fileID: 8300000, guid: 9971037e3e860534db891d69adc7c19b, type: 3}
+  healSounds: []
+>>>>>>> Stashed changes
   currentState: 
   canAttack: 1
 --- !u!114 &4514724282074855801
@@ -545,6 +552,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: bffac0c138c69ee4597f38f07b7d43e6, type: 2}
+    - target: {fileID: 4066668297557381497, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 88bdac186e002e14cae2e824b272d373, type: 2}
     - target: {fileID: 4833088490931510165, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.63951105
@@ -697,6 +708,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9175385655781485315, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 88bdac186e002e14cae2e824b272d373, type: 2}
     m_RemovedComponents:
     - {fileID: 9036980633323257398, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
     m_RemovedGameObjects: []

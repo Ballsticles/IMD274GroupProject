@@ -53,8 +53,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+<<<<<<< Updated upstream
     - _Exposure: 0.58
     - _Rotation: 663.3702
+=======
+    - _Exposure: 0.43
+    - _Rotation: 1324.2479
+>>>>>>> Stashed changes
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 0.49803922, g: 0.49019608, b: 0.78039217, a: 1}
