@@ -61,10 +61,12 @@
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\HealItem.cs" />
+    <Compile Include="Assets\Scripts\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\StateMachine\BaseCombatState.cs" />
     <Compile Include="Assets\Samples\Shader Graph\17.3.0\Common\Scripts\DisableGizmos.cs" />
     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerSpawnManager.cs" />
     <Compile Include="Assets\Scripts\HealthHeart.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\OutCombatState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Assets\Scripts\StateMachine\BaseState.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\AttackSO.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\JumpState.cs" />
+    <Compile Include="Assets\Scripts\BoundaryBox.cs" />
     <Compile Include="Assets\Scripts\HeartsBarManager.cs" />
     <Compile Include="Assets\stylizedLittleHero_NPC\Scripts\CharacterCustomizeUI.cs" />
     <Compile Include="Assets\Scripts\SkyboxRotatorScript.cs" />
