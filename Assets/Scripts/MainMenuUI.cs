@@ -6,6 +6,30 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private GameObject titleMenu;
     [SerializeField] private GameObject levelsMenu;
     private bool loading = false;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip buttonClickSound;
+    [SerializeField] private AudioClip loadLevelSound;
+    [SerializeField] private AudioClip backSound;
+    [SerializeField] private AudioClip hoverSound;
+    [SerializeField] private AudioSource audioSource;
+
+    public void HoverSound()
+    {
+        audioSource.PlayOneShot(hoverSound);
+    }
+     public void ButtonClickSound()
+    {
+        audioSource.PlayOneShot(buttonClickSound);
+    }
+    public void LoadLevelSound()
+    {
+        audioSource.PlayOneShot(loadLevelSound);
+    }
+    public void BackSound()
+    {
+        audioSource.PlayOneShot(backSound);
+    }
+
     public void OpenTitleMenu()
     {
         titleMenu.SetActive(true);
