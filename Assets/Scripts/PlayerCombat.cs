@@ -35,9 +35,12 @@ public class PlayerCombat : MonoBehaviour
     PlayerInputActions inputActions;
     [SerializeField] Animator combatHUD;
     Animator anim;
-    [SerializeField]private GameObject currWeaponCollider;
-    
+    [SerializeField] private GameObject currWeaponCollider;
+    [SerializeField] private AudioSource combatAudio;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip[] hurtSounds;
+    [SerializeField] private AudioClip[] healSounds;
     //statemachine stuffs
     StateMachine combatStateMachine;
     public string currentState;
@@ -138,8 +141,11 @@ public class PlayerCombat : MonoBehaviour
 
     public void OnHurt()
     {
-        hurtTimer.Start();
-        
+        if(currentState != "HurtState")
+        {
+            hurtTimer.Start();
+            combatAudio.PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Length)]);
+        }
     }
     public void OnDie()
     {
@@ -148,6 +154,7 @@ public class PlayerCombat : MonoBehaviour
     public void OnHeal()
     {
         healTimer.Start();
+        combatAudio.PlayOneShot(healSounds[Random.Range(0, healSounds.Length)]);
 
     }
     void Attack()
@@ -167,7 +174,7 @@ public class PlayerCombat : MonoBehaviour
                 outOfCombatTimer.Start();
                 AttackSO attack = combo[comboCounter];
                 anim.runtimeAnimatorController = attack.animatorOV;
-
+                combatAudio.PlayOneShot(attack.attackSound);
                 if (currWeaponCollider != null)
                 {
                     Destroy(currWeaponCollider);

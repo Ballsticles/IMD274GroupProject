@@ -21,6 +21,14 @@ public class HeartsBarManager : MonoBehaviour
         playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
         
     }
+    private void Update()
+    {
+        if (playerHealth == null)
+        {
+            playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
+        }
+   
+    }
     private void Start()
     {
         DrawHearts();
