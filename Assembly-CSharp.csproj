@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\OutCombatState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\InputSystem\InputManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\IDamagable.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\DiveState.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
