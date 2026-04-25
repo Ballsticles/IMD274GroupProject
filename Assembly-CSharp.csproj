@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\HurtState.cs" />
     <Compile Include="Assets\Scripts\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\StateMachine\BaseState.cs" />
+    <Compile Include="Assets\Scripts\SetUIElementToSelectOnInteraction.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\AttackSO.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\JumpState.cs" />
     <Compile Include="Assets\Scripts\BoundaryBox.cs" />
