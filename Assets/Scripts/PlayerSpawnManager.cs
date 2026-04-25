@@ -6,7 +6,8 @@ public class PlayerSpawnManager : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
 
     private GameObject currentPlayer;
-
+    public bool hasDoubleJumpPowerup = false;
+    public bool hasSwingPowerup = false;
 
 
     private void OnEnable()
@@ -67,6 +68,8 @@ public class PlayerSpawnManager : MonoBehaviour
             {
                 currentPlayer = Instantiate(playerPrefab, currentSpawnPoint.position, Quaternion.identity);
                 currentPlayer = GameObject.FindGameObjectWithTag("Player");
+                currentPlayer.GetComponentInChildren<PlayerMotor>().unlockedDoubleJump = hasDoubleJumpPowerup;
+                currentPlayer.GetComponentInChildren<PlayerMotor>().unlockedSwing = hasSwingPowerup;
             }
             else
             {

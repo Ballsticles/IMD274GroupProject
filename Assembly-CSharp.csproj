@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\HealState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\DieState.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\UIHighlightIsSelect.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\HealItem.cs" />
     <Compile Include="Assets\Scripts\SpawnPoint.cs" />

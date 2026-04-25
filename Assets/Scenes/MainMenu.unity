@@ -1412,6 +1412,7 @@ GameObject:
   - component: {fileID: 611184983}
   - component: {fileID: 611184982}
   - component: {fileID: 611184981}
+  - component: {fileID: 611184984}
   m_Layer: 0
   m_Name: Options
   m_TagString: Untagged
@@ -1544,6 +1545,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611184979}
   m_CullTransparentMesh: 1
+--- !u!114 &611184984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611184979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!4 &641422711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2808739924869818737, guid: 13eb4c0e6d7eec0488f722a245237463, type: 3}
@@ -1808,6 +1821,7 @@ GameObject:
   - component: {fileID: 1051872715}
   - component: {fileID: 1051872714}
   - component: {fileID: 1051872717}
+  - component: {fileID: 1051872718}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -1966,6 +1980,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SetUIElementToSelectOnInteraction
   eventSystem: {fileID: 265557223}
   elementToSelect: {fileID: 1323677905}
+--- !u!114 &1051872718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051872712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!1 &1051897415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +2005,7 @@ GameObject:
   - component: {fileID: 1051897418}
   - component: {fileID: 1051897417}
   - component: {fileID: 1051897420}
+  - component: {fileID: 1051897421}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -2137,6 +2164,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SetUIElementToSelectOnInteraction
   eventSystem: {fileID: 265557223}
   elementToSelect: {fileID: 1051872714}
+--- !u!114 &1051897421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051897415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!1001 &1113580672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2393,6 +2432,7 @@ GameObject:
   - component: {fileID: 1255374621}
   - component: {fileID: 1255374620}
   - component: {fileID: 1255374619}
+  - component: {fileID: 1255374622}
   m_Layer: 0
   m_Name: LOad
   m_TagString: Untagged
@@ -2514,6 +2554,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255374617}
   m_CullTransparentMesh: 1
+--- !u!114 &1255374622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255374617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!1 &1323677903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +2578,7 @@ GameObject:
   - component: {fileID: 1323677907}
   - component: {fileID: 1323677906}
   - component: {fileID: 1323677905}
+  - component: {fileID: 1323677908}
   m_Layer: 0
   m_Name: Swing
   m_TagString: Untagged
@@ -2658,6 +2711,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323677903}
   m_CullTransparentMesh: 1
+--- !u!114 &1323677908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323677903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!4 &1368367079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 567104378249240564, guid: 1376be12afc625c4994a1d8091863ae8, type: 3}
@@ -2883,6 +2948,7 @@ GameObject:
   - component: {fileID: 1695478467}
   - component: {fileID: 1695478466}
   - component: {fileID: 1695478465}
+  - component: {fileID: 1695478468}
   m_Layer: 0
   m_Name: JUmp
   m_TagString: Untagged
@@ -3015,6 +3081,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695478463}
   m_CullTransparentMesh: 1
+--- !u!114 &1695478468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695478463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!1 &1706303054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,6 +3234,7 @@ GameObject:
   - component: {fileID: 1710724793}
   - component: {fileID: 1710724792}
   - component: {fileID: 1710724791}
+  - component: {fileID: 1710724794}
   m_Layer: 0
   m_Name: Town
   m_TagString: Untagged
@@ -3288,6 +3367,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710724789}
   m_CullTransparentMesh: 1
+--- !u!114 &1710724794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710724789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!4 &1758951249 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5656420109655947461, guid: dd9e4485349935e42bd804900e69d89a, type: 3}
@@ -4040,6 +4131,7 @@ GameObject:
   - component: {fileID: 2119074039}
   - component: {fileID: 2119074038}
   - component: {fileID: 2119074037}
+  - component: {fileID: 2119074040}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -4172,6 +4264,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119074035}
   m_CullTransparentMesh: 1
+--- !u!114 &2119074040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119074035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!1 &2138206068
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,6 +4288,7 @@ GameObject:
   - component: {fileID: 2138206072}
   - component: {fileID: 2138206071}
   - component: {fileID: 2138206070}
+  - component: {fileID: 2138206073}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -4316,6 +4421,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138206068}
   m_CullTransparentMesh: 1
+--- !u!114 &2138206073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138206068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850e9043c672647bcc6b26ae5cc3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHighlightIsSelect
 --- !u!1001 &2141636113
 PrefabInstance:
   m_ObjectHideFlags: 0

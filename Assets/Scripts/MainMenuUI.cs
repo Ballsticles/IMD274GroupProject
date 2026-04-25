@@ -15,6 +15,17 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private AudioClip hoverSound;
     [SerializeField] private AudioSource audioSource;
 
+
+
+    private void OnEnable()
+    {
+        UIHighlightIsSelect.OnSelectEvent += HoverSound;
+    }
+    private void OnDisable()
+    {
+        UIHighlightIsSelect.OnSelectEvent -= HoverSound;
+    }
+
     public void HoverSound()
     {
         audioSource.PlayOneShot(hoverSound);

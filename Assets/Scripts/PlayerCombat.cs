@@ -55,6 +55,7 @@ public class PlayerCombat : MonoBehaviour
         PlayerHealth.OnPlayerDamaged += OnHurt;
         PlayerHealth.OnPlayerHeal += OnHeal;
         PlayerHealth.OnPlayerDeath += OnDie;
+        
     }
 
     void OnDisable()

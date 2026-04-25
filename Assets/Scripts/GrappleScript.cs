@@ -14,7 +14,7 @@ public class GrappleScript : MonoBehaviour
     public float maxSwingDistance = 25f;
     private Vector3 swingPoint;
     private SpringJoint joint;
-
+    public bool canSwing = true;
 
     private Vector3 currentGrapplePosition;
 
@@ -47,6 +47,7 @@ public class GrappleScript : MonoBehaviour
     void OnEnable()
     {
         inputs.Grab += OnSwing;
+        
     }
 
     void OnDisable()
@@ -68,6 +69,8 @@ public class GrappleScript : MonoBehaviour
 
     public void OnSwing(bool performed)
     {
+        if(!canSwing) return;
+        
         if(performed)
         {
             StartSwing();

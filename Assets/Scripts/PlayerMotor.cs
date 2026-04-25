@@ -73,7 +73,7 @@ public class PlayerMotor : MonoBehaviour
 
     CountdownTimer swingFallTimer;
 
-
+    public bool unlockedSwing = true;
     public bool unlockedDoubleJump = true;
     [Header("Testing Options")]
     [SerializeField] float moveFalloff = 1f;
@@ -181,6 +181,8 @@ public class PlayerMotor : MonoBehaviour
         // Set Initial State
 
         stateMachine.SetState(locomotionState);
+        
+
     }
 
     void At(IStates from, IStates to, IPredicate condition) => stateMachine.AddTransition(from, to, condition);
@@ -209,6 +211,7 @@ public class PlayerMotor : MonoBehaviour
     void OnEnable()
     {
         inputManager.Jump += OnJump;
+        
     }
 
     void OnDisable()
@@ -283,6 +286,8 @@ public class PlayerMotor : MonoBehaviour
         HandleTimers();
         UpdateAnimator();
         currentState = stateMachine.current.State.ToString();
+        grapple.canSwing = unlockedSwing;
+
     }
     private void FixedUpdate()
     {

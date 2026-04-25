@@ -6,6 +6,7 @@ public class EnemyHealth : BaseDamagable
     public Slider healthBar;
     public bool healthBarEnabled = false;
     Animator anim;
+    public BoxCollider collisionHurtBox;
 
     public override void Awake()
     {
@@ -43,6 +44,10 @@ public class EnemyHealth : BaseDamagable
     public override void Die()
     {
         base.Die();
+        if (collisionHurtBox != null)
+        {
+            collisionHurtBox.enabled = false;
+        }
         anim.SetBool("dead", true);
     }
 
