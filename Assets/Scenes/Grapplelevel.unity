@@ -60414,6 +60414,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7880821913101572594, guid: 177162411ece35b44a0ba2e1c993fd14, type: 3}
+      propertyPath: hasSwingPowerup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880821913101572594, guid: 177162411ece35b44a0ba2e1c993fd14, type: 3}
+      propertyPath: hasDoubleJumpPowerup
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
