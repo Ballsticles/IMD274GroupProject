@@ -9,7 +9,7 @@ public class SwingState : BaseState
 
     public override void OnEnter()
     {
-        
+        player.PlaySwingSound();
         animator.CrossFade(SwingHash, crossFadeDuration);
         player.swinging = true;
         combat.canAttack = false;
@@ -20,5 +20,6 @@ public class SwingState : BaseState
         player.swinging = false;
         player.StartFallTimer();
         combat.canAttack = true;
+        player.StopSwingSound();
     }
 }

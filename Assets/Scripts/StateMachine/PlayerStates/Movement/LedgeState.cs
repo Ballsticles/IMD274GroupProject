@@ -7,6 +7,7 @@ public class LedgeState : BaseState
     }
     public override void OnEnter()
     {
+        player.PlayLedgeSound();
         animator.CrossFade(LedgeHash, crossFadeDuration);
         combat.canAttack = false;
     }

@@ -6,13 +6,14 @@ public class LocomotionState : BaseState
 
     public override void OnEnter()
     {
-        
+        player.PlayLandSound();
         animator.CrossFade(LocomotionHash, crossFadeDuration);
         
     }
 
     public override void FixedUpdate()
     {
+        
         player.HandleMovement();
         groundChecker.CheckForGround();
     }

@@ -1,4 +1,5 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] InputManager inputManager;
     [SerializeField] Animator animator;
     [SerializeField] PlayerCombat combat;
+    [SerializeField] MovementAudio movementAudio;
 
 
     [Header ("Settings")]
@@ -80,6 +82,9 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] bool diveIsJump;
     [SerializeField] bool swingResetDive;
     [SerializeField] float fallTimerProgress;
+
+   
+
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -193,7 +198,32 @@ public class PlayerMotor : MonoBehaviour
         inputManager.EnablePlayerActions();
     }
 
-    
+    public void PlayFootstepSounds(AnimationEvent animationEvent)
+    {
+        if(animationEvent.animatorClipInfo.weight < 0.16f || animationEvent.animatorClipInfo.weight >= 0.56f) return;
+        movementAudio.PlayFootstep();
+    }
+    public void PlayRunStepSounds(AnimationEvent animationEvent)
+    {
+        if(animationEvent.animatorClipInfo.weight < 0.56f) return;
+        movementAudio.PlayFootstep();
+    }
+
+    public void PlayLandSound()
+    {
+        movementAudio.PlayLand();
+    }
+    public void PlaySwingSound()
+    {
+        movementAudio.PlaySwingStart();
+    }
+    public void StopSwingSound()    {
+        movementAudio.PlaySwingStop();
+    }
+    public void PlayLedgeSound()
+    {
+        movementAudio.PlayLedgeGrab();
+    }
 
 
     public void StopMovement()
@@ -226,6 +256,7 @@ public class PlayerMotor : MonoBehaviour
             animator.SetTrigger("Jump");
             jumpTimer.Start();
             groundCheck.coyoteTimer.Stop();
+            movementAudio.PlayJump();
         }
         else if (!performed && jumpTimer.IsRunning || performed && jumpTimer.IsFinished)
         {
@@ -238,6 +269,7 @@ public class PlayerMotor : MonoBehaviour
             animator.SetTrigger("DoubleJump");
             diveTimer.Start();
             hasDive = false;
+            movementAudio.PlayDoubleJump();
         }
   
     }

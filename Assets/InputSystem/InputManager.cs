@@ -15,6 +15,7 @@ public class InputManager : ScriptableObject, IPlayerActions
     public event UnityAction<bool> Jump = delegate { };
     public event UnityAction<bool> Grab = delegate { };
     public event UnityAction<bool> Attack = delegate { };
+    public event UnityAction PauseGame = delegate { };
 
     public PlayerInputActions inputActions;
 
@@ -37,14 +38,23 @@ public class InputManager : ScriptableObject, IPlayerActions
         inputActions.Disable();
     }
 
+    public void EnableUIActions()
+    {
+        inputActions.UI.Enable();
+    }
+    public void DisableUIActions()
+    {
+        inputActions.UI.Disable();
+    }
+
     public void EnablePlayerActions()
     {
-        inputActions.Enable();
+        inputActions.Player.Enable();
         
     }
     public void DisablePlayerActions()
     {
-        inputActions.Disable();
+        inputActions.Player.Disable();
     }
     public void DisableMovementActions()
     {
@@ -136,5 +146,10 @@ public class InputManager : ScriptableObject, IPlayerActions
     public void OnSprint(InputAction.CallbackContext context)
     {
         //noop
+    }
+
+    public void OnPauseGame(InputAction.CallbackContext context)
+    {
+        PauseGame.Invoke();
     }
 }

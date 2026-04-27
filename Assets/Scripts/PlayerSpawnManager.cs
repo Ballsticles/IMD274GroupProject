@@ -66,7 +66,7 @@ public class PlayerSpawnManager : MonoBehaviour
         {
             if (currentPlayer == null)
             {
-                currentPlayer = Instantiate(playerPrefab, currentSpawnPoint.position, Quaternion.identity);
+                currentPlayer = Instantiate(playerPrefab, currentSpawnPoint.position, currentSpawnPoint.rotation);
                 currentPlayer = GameObject.FindGameObjectWithTag("Player");
                 currentPlayer.GetComponentInChildren<PlayerMotor>().unlockedDoubleJump = hasDoubleJumpPowerup;
                 currentPlayer.GetComponentInChildren<PlayerMotor>().unlockedSwing = hasSwingPowerup;
