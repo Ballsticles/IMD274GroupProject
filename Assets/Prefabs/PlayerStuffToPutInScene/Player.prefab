@@ -149,7 +149,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9e0db1b05a0330949b7ebf5fc974b752, type: 3}
   - {fileID: 8300000, guid: b7b25c569dd1d9f46a6416fa6fc220ec, type: 3}
   - {fileID: 8300000, guid: 5fa8fcf6a22052c439d02d76305ae894, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 252c492b2cd9a82458ad5d5e023255f3, type: 3}
 --- !u!1 &4155283934346185742
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6844891375862804532
