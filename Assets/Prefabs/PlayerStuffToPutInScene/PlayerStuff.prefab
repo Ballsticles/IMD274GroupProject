@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7665509343660242291, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 252c492b2cd9a82458ad5d5e023255f3, type: 3}
     - target: {fileID: 8248774202387038206, guid: 018fd63226c52044ead777fc7bb8c132, type: 3}
       propertyPath: grappled
       value: 
