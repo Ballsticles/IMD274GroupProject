@@ -36,11 +36,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] Animator combatHUD;
     Animator anim;
     [SerializeField] private GameObject currWeaponCollider;
-    [SerializeField] private AudioSource combatAudio;
+    [SerializeField] private CombatAudio combatAudio;
 
-    [Header("SFX")]
-    [SerializeField] private AudioClip[] hurtSounds;
-    [SerializeField] private AudioClip[] healSounds;
+
     //statemachine stuffs
     StateMachine combatStateMachine;
     public string currentState;
@@ -55,6 +53,7 @@ public class PlayerCombat : MonoBehaviour
         PlayerHealth.OnPlayerDamaged += OnHurt;
         PlayerHealth.OnPlayerHeal += OnHeal;
         PlayerHealth.OnPlayerDeath += OnDie;
+        
     }
 
     void OnDisable()
@@ -144,17 +143,18 @@ public class PlayerCombat : MonoBehaviour
         if(currentState != "HurtState")
         {
             hurtTimer.Start();
-            combatAudio.PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Length)]);
+            combatAudio.PlayHitSound();
         }
     }
     public void OnDie()
     {
         dying = true;
+        combatAudio.PlayDeathSound();
     }
     public void OnHeal()
     {
         healTimer.Start();
-        combatAudio.PlayOneShot(healSounds[Random.Range(0, healSounds.Length)]);
+        combatAudio.PlayHealSound();
 
     }
     void Attack()
@@ -174,7 +174,7 @@ public class PlayerCombat : MonoBehaviour
                 outOfCombatTimer.Start();
                 AttackSO attack = combo[comboCounter];
                 anim.runtimeAnimatorController = attack.animatorOV;
-                combatAudio.PlayOneShot(attack.attackSound);
+                combatAudio.PlayAttackSound(attack.attackSound);
                 if (currWeaponCollider != null)
                 {
                     Destroy(currWeaponCollider);

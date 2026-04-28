@@ -6,6 +6,7 @@ public class BaseDamagable : MonoBehaviour, IDamagable
     public int maxHealth;
     public int health;
     public bool invincible = false;
+    private bool isDead = false;
     private DamageFlash flash;
 
     public GameObject hitEffectPrefab;
@@ -66,7 +67,7 @@ public class BaseDamagable : MonoBehaviour, IDamagable
 
     public virtual void Update()
     {
-        if(health <= 0)
+        if(health <= 0 && !isDead)
         {
             Die();
         }
@@ -81,6 +82,6 @@ public class BaseDamagable : MonoBehaviour, IDamagable
     }
     public virtual void Die()
     {
-
+        isDead = true;
     }
 }

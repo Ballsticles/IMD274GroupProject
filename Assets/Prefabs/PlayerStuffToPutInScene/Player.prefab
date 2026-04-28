@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4293888973974662009}
   - component: {fileID: 500915678337981702}
+  - component: {fileID: 7665509343660242291}
   m_Layer: 7
   m_Name: CombatAudio
   m_TagString: Untagged
@@ -129,6 +130,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7665509343660242291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181669674867755860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c365bdaeba05e4542904eb1a8915dbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  hurtSounds:
+  - {fileID: 8300000, guid: c1e6d64de12f672408299b5d7858ebaa, type: 3}
+  - {fileID: 8300000, guid: 576af90face456d47a3238147514d884, type: 3}
+  healSounds:
+  - {fileID: 8300000, guid: 9e0db1b05a0330949b7ebf5fc974b752, type: 3}
+  - {fileID: 8300000, guid: b7b25c569dd1d9f46a6416fa6fc220ec, type: 3}
+  - {fileID: 8300000, guid: 5fa8fcf6a22052c439d02d76305ae894, type: 3}
+  deathSound: {fileID: 8300000, guid: 252c492b2cd9a82458ad5d5e023255f3, type: 3}
 --- !u!1 &4155283934346185742
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +214,7 @@ MonoBehaviour:
   inputManager: {fileID: 11400000, guid: 4fe08538442547e4a9c2485b6fa946c7, type: 2}
   animator: {fileID: 4947615400017170679}
   combat: {fileID: 0}
+  movementAudio: {fileID: 3832485358700126572}
   movementSpeed: 300
   rotationSpeed: 600
   smoothTime: 0.2
@@ -209,6 +231,7 @@ MonoBehaviour:
   swingFloatDuration: 1
   swinging: 0
   currentState: 
+  unlockedSwing: 1
   unlockedDoubleJump: 1
   moveFalloff: 3
   diveIsJump: 1
@@ -261,7 +284,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6844891375862804532
@@ -379,6 +402,7 @@ MonoBehaviour:
     m_Bits: 256
   isSwinging: 0
   maxSwingDistance: 10
+  canSwing: 1
   predictionSphereCastRadius: 5
   predictionPoint: {fileID: 0}
   minDistanceMult: 0.2
@@ -529,9 +553,7 @@ MonoBehaviour:
   playerHealth: {fileID: 0}
   combatHUD: {fileID: 0}
   currWeaponCollider: {fileID: 0}
-  combatAudio: {fileID: 500915678337981702}
-  hurtSounds:
-  - {fileID: 8300000, guid: 9971037e3e860534db891d69adc7c19b, type: 3}
+  combatAudio: {fileID: 7665509343660242291}
   currentState: 
   canAttack: 1
 --- !u!114 &4514724282074855801
@@ -562,8 +584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5671d9b5f0f7a84d9cbfe2de83fcb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageFlash
-  flashColor: {r: 1, g: 0, b: 0, a: 1}
-  flashTime: 1
+  flashColor: {r: 67.793526, g: 0, b: 0, a: 1}
+  flashTime: 0.6
   meshRenderers: []
   materials: []
 --- !u!1 &4716013342853524562
@@ -576,6 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198679315308912379}
   - component: {fileID: 701237654074891639}
+  - component: {fileID: 3832485358700126572}
   m_Layer: 7
   m_Name: MovementAudio
   m_TagString: Untagged
@@ -695,6 +718,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3832485358700126572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716013342853524562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea8893341fcd3f4287df9cb17ea83c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  footstepSounds:
+  - {fileID: 8300000, guid: 7a4eccb6dbd575d48ae908539712f54e, type: 3}
+  - {fileID: 8300000, guid: 0d18417b210206f4ba1357d3173e47b7, type: 3}
+  - {fileID: 8300000, guid: 1cfeca549de76684a90068a0ab53dceb, type: 3}
+  - {fileID: 8300000, guid: 7d9f70f72ddeeb14b85b78d9c9b5f701, type: 3}
+  - {fileID: 8300000, guid: b48b1ea839f331c4387f3193ff55be3c, type: 3}
+  - {fileID: 8300000, guid: ebeedd8ca5ed46840a38687f4a60e629, type: 3}
+  - {fileID: 8300000, guid: 59707370d0abdbf45baa4a09f65341f2, type: 3}
+  - {fileID: 8300000, guid: a4118eb8fa70f614cb473124caf637da, type: 3}
+  - {fileID: 8300000, guid: 1e62a5acb6f4b6a43b58ac7bc1fe5cbd, type: 3}
+  jumpSounds:
+  - {fileID: 8300000, guid: c082dfdafaee1f9429cfdfc8877b56b2, type: 3}
+  doubleJumpSounds:
+  - {fileID: 8300000, guid: c082dfdafaee1f9429cfdfc8877b56b2, type: 3}
+  swingStartSounds:
+  - {fileID: 8300000, guid: 23f6db86ed2d118439d79c366dd53d3b, type: 3}
+  - {fileID: 8300000, guid: f8cd89cfe01cd224e8730e59ee1fa128, type: 3}
+  swingStopSounds:
+  - {fileID: 8300000, guid: 9868a1725ea39e2428472ce9a3725679, type: 3}
+  ledgeGrabSounds:
+  - {fileID: 8300000, guid: 16d8a6a60b5a39e4688c4678551db582, type: 3}
+  landSounds:
+  - {fileID: 8300000, guid: 16d8a6a60b5a39e4688c4678551db582, type: 3}
+  - {fileID: 8300000, guid: b68a1120b97ed3e40afa0fa43ef0da22, type: 3}
+  - {fileID: 8300000, guid: c8086bb92f864bd42ba45cdd5678f4bc, type: 3}
+  - {fileID: 8300000, guid: 50f0fffec4591af4ba30084d1be13b45, type: 3}
+  footstepInterval: 0.5
 --- !u!1 &8514579514958220608
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +872,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: bffac0c138c69ee4597f38f07b7d43e6, type: 2}
+    - target: {fileID: 4066668297557381497, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 88bdac186e002e14cae2e824b272d373, type: 2}
     - target: {fileID: 4833088490931510165, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.63951105
@@ -962,6 +1028,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9175385655781485315, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 88bdac186e002e14cae2e824b272d373, type: 2}
     m_RemovedComponents:
     - {fileID: 9036980633323257398, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
     m_RemovedGameObjects: []
