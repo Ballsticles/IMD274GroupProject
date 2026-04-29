@@ -379,16 +379,19 @@ public class PlayerMotor : MonoBehaviour
             
             transform.position = ledgeChecker.hangPos;
             transform.rotation = Quaternion.LookRotation(ledgeChecker.hangRot);
+            rb.isKinematic = true;
             rb.useGravity = false;
 
             if (jumpTimer.IsRunning)
             {
                 ledgeChecker.onLedge = false;
+                rb.isKinematic = false;
                 rb.useGravity = true;
             }
         }
         else
         {
+            rb.isKinematic = false;
             rb.useGravity = true;
             ledgeChecker.onLedge = false;
 
