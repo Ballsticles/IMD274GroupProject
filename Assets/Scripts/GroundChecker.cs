@@ -15,6 +15,7 @@ public class GroundChecker : MonoBehaviour
     {
         coyoteTimer = new CountdownTimer(coyoteTime);
         coyoteTimer.onTimerStop += () => isGrounded = false;
+        
     }
     private void Update()
     {

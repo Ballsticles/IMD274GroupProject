@@ -254,8 +254,9 @@ public class PlayerMotor : MonoBehaviour
         if (performed && !jumpTimer.IsRunning && !jumpCooldownTimer.IsRunning && (groundCheck.isGrounded || ledgeChecker.onLedge))
         {
             animator.SetTrigger("Jump");
-            jumpTimer.Start();
+            
             groundCheck.coyoteTimer.Stop();
+            jumpTimer.Start();
             movementAudio.PlayJump();
         }
         else if (!performed && jumpTimer.IsRunning || performed && jumpTimer.IsFinished)
