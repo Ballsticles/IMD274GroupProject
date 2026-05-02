@@ -54,6 +54,7 @@
     <Compile Include="Assets\Scripts\StateMachine\IStates.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\LocomotionState.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\LedgeState.cs" />
+    <Compile Include="Assets\Scripts\OptionsMenuHandler.cs" />
     <Compile Include="Assets\Scripts\StateMachine\FuncPredicate.cs" />
     <Compile Include="Assets\Scripts\StateMachine\IPredicate.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\HealState.cs" />

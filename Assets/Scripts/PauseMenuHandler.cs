@@ -7,10 +7,12 @@ public class PauseMenuHandler : MonoBehaviour
 {
     
     public GameObject pauseMenuUI;
+    public GameObject optionsMenuUI;
     public InputManager inputManager;
     public GameObject[] otherMenus;
 
     public Selectable firstSelectedObject;
+    public Selectable optionsFirstObject;
     private AudioSource bgm;
     private bool isGamePaused = false;
     private void OnEnable()
@@ -74,6 +76,22 @@ public class PauseMenuHandler : MonoBehaviour
         pauseMenuUI.SetActive(true);
         firstSelectedObject.Select();
     }
+    
+    public void OpenOptionsMenu()
+    {
+        pauseMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(true);
+        optionsFirstObject.Select();
+    }
+
+    public void CloseOptionsMenu()
+    {
+        optionsMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(true);
+        firstSelectedObject.Select();
+    }
+
+
     public void ExitGame()
     {
         Application.Quit();
