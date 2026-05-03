@@ -24,6 +24,11 @@ public class SpawnPoint : MonoBehaviour
         {
             SetSpawnPoint?.Invoke(transform);
             usedSpawnPoint = true;
+            Collider col = GetComponent<Collider>();
+            if (col != null)
+            {
+                col.enabled = false;
+            }
         }
     }
 

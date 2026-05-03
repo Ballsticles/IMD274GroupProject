@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\CameraBreathing.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\DiveState.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\SettingsData.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\MovementAudio.cs" />
     <Compile Include="Assets\Scripts\StateMachine\Transition.cs" />
