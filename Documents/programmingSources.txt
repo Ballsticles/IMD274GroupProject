@@ -1,5 +1,0 @@
-https://www.youtube.com/watch?v=5NViMw-ALAo - heart health bar
-https://www.youtube.com/watch?v=rq6yGh-piIU - damage flash
-https://www.youtube.com/watch?v=q7GPBAFOuLs&t=553s - 3D platformer series
-
-https://github.com/LousyBook-01/Camera-Breathing-Unity/blob/main/CameraBreathing.cs
