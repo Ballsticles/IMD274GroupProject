@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 52517692}
   - component: {fileID: 52517691}
   - component: {fileID: 52517690}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Top Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6757,7 +6757,7 @@ GameObject:
   - component: {fileID: 374829361}
   - component: {fileID: 374829360}
   - component: {fileID: 374829359}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: AfterFirstSwing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21437,7 +21437,7 @@ GameObject:
   - component: {fileID: 893796028}
   - component: {fileID: 893796027}
   - component: {fileID: 893796026}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22927,7 +22927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 916874561}
   - component: {fileID: 916874562}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: InitialSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25796,7 +25796,7 @@ GameObject:
   - component: {fileID: 1010256545}
   - component: {fileID: 1010256544}
   - component: {fileID: 1010256543}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Ledge Climb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31748,7 +31748,7 @@ GameObject:
   - component: {fileID: 1173146570}
   - component: {fileID: 1173146569}
   - component: {fileID: 1173146568}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: LeftFirstPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38710,7 +38710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1377244293}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PlayerSpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41231,7 +41231,7 @@ GameObject:
   - component: {fileID: 1458493428}
   - component: {fileID: 1458493427}
   - component: {fileID: 1458493426}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ForkInTheRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
