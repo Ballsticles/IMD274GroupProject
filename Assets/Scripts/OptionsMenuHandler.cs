@@ -15,8 +15,7 @@ public class OptionsMenuHandler : MonoBehaviour
     [Header("Buttons")]
     public Selectable generalButton;
     public Selectable audioButton;
-    public Selectable firstAudioSelect;
-    public Selectable firstGeneralSelect;
+
 
     public Selectable fpsChange;
     [Header("General Interactables")]
@@ -43,6 +42,9 @@ public class OptionsMenuHandler : MonoBehaviour
     private float mouseSensitivityY;
     private float controllerSensitivityX;
     private float controllerSensitivityY;
+
+
+    public static event Action sensChanged;
 
     private void Start()
     {
@@ -84,7 +86,7 @@ public class OptionsMenuHandler : MonoBehaviour
         generalMenu.SetActive(true);
         audioMenu.SetActive(false);
         generalButton.interactable = false;
-        audioButton.interactable = false;
+        audioButton.interactable = true;
     }
     
     public void ShowAudioMenu()
@@ -138,27 +140,16 @@ public class OptionsMenuHandler : MonoBehaviour
         controllerSensitivityX = sensitivity;
         controllerX.value = sensitivity;
         controllerXInput.text = sensitivity.ToString();
+        sensChanged?.Invoke();
     }
     
-    public void StringMousesX(string input)
-    {
-        StringToFloatSens(input, 0);
-    }
-    
-    public void StringMouseY(string input)
-    {
-        StringToFloatSens(input, 1);
-    }
-    
-    public void StringControllerX(string input)
-    {
-        StringToFloatSens(input, 2);
-    }
-    
-    public void StringControllerY(string input)
-    {
-        StringToFloatSens(input, 3);
-    }
+    public void StringMouseX(string input) => StringToFloatSens(input, 0);
+
+    public void StringMouseY(string input) => StringToFloatSens(input, 1);
+
+    public void StringControllerX(string input) => StringToFloatSens(input, 2);
+
+    public void StringControllerY(string input) => StringToFloatSens(input, 3);
 
     public void StringToFloatSens(string input, int type)
     {
@@ -183,6 +174,7 @@ public class OptionsMenuHandler : MonoBehaviour
         controllerSensitivityY = sensitivity;
         controllerY.value = sensitivity;
         controllerYInput.text = sensitivity.ToString();
+        sensChanged?.Invoke();
     }
     public void SetMouseXSens(float sensitivity)
     {
@@ -191,6 +183,7 @@ public class OptionsMenuHandler : MonoBehaviour
         mouseSensitivityX = sensitivity;
         mouseX.value = sensitivity;
         mouseXInput.text = sensitivity.ToString();
+        sensChanged?.Invoke();
     }
     public void SetMouseYSens(float sensitivity)
     {
@@ -199,6 +192,7 @@ public class OptionsMenuHandler : MonoBehaviour
         mouseSensitivityY = sensitivity;
         mouseY.value = sensitivity;
         mouseYInput.text = sensitivity.ToString();
+        sensChanged?.Invoke();
     }
 
 

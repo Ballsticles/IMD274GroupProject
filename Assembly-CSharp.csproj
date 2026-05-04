@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\IDamagable.cs" />
     <Compile Include="Assets\Scripts\CameraBreathing.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\DiveState.cs" />
+    <Compile Include="Assets\Scripts\UICanceltoSelectOther.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\SettingsData.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -97,8 +98,10 @@
     <Compile Include="Assets\Scripts\BoundaryBox.cs" />
     <Compile Include="Assets\Scripts\HeartsBarManager.cs" />
     <Compile Include="Assets\stylizedLittleHero_NPC\Scripts\CharacterCustomizeUI.cs" />
+    <Compile Include="Assets\Scripts\LockCursorOnSelect.cs" />
     <Compile Include="Assets\Scripts\SkyboxRotatorScript.cs" />
     <Compile Include="Assets\Scripts\GroundChecker.cs" />
+    <Compile Include="Assets\Scripts\SensitivityHandler.cs" />
     <Compile Include="Assets\stylizedLittleHero_NPC\Scripts\CharacterPartSwapper.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\AttackState.cs" />
