@@ -7357,7 +7357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7300108015981320003, guid: 441cb820374772b449ad6b044acfcefc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.0769424
+      value: 15.230827
       objectReference: {fileID: 0}
     - target: {fileID: 7300108015981320003, guid: 441cb820374772b449ad6b044acfcefc, type: 3}
       propertyPath: m_LocalScale.z
@@ -10274,7 +10274,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 1257587133}
-  m_VersionIndex: 11756
+  m_VersionIndex: 11765
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11643,6 +11643,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 787615509}
+    - target: {fileID: 7634648348575997090, guid: 86c47a0e65c727f4f97eaf48393a4ce9, type: 3}
+      propertyPath: m_VersionIndex
+      value: 11765
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

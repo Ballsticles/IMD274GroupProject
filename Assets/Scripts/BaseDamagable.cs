@@ -82,6 +82,7 @@ public class BaseDamagable : MonoBehaviour, IDamagable
     }
     public virtual void Die()
     {
+        invincible = true;
         isDead = true;
     }
 }

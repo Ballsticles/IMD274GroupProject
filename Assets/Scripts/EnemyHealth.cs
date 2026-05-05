@@ -13,7 +13,7 @@ public class EnemyHealth : BaseDamagable
         base.Awake();
         healthBar.maxValue = maxHealth;
         healthBar.value = health;
-        anim = gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponentInChildren<Animator>();
     }
     public override void UpdateHealth()
     {
@@ -27,11 +27,11 @@ public class EnemyHealth : BaseDamagable
         base.Update(); 
         if (healthBarEnabled)
         {
-            healthBar.enabled = true;
+            healthBar.gameObject.SetActive(true);
         }
         else
         {
-            healthBar.enabled = false;
+            healthBar.gameObject.SetActive(false);
         }
         UpdateHealth();
     }

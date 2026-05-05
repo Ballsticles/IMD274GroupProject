@@ -33,6 +33,8 @@ public class DeathMenuHandler : MonoBehaviour
         {
             menu.SetActive(false);
         }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         deathMenu.SetActive(true);
         bgm.Stop();
         firstSelectedObject.Select();

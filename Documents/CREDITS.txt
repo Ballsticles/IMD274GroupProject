@@ -1,0 +1,83 @@
+Credits -----------------------------------------------------------------------------------
+
+
+Unity Asset Store Packages
+===========================================================================================
+
+Diverse Space Skybox
+https://assetstore.unity.com/packages/2d/textures-materials/diverse-space-skybox-11044
+
+Farland Skies - Cloudy Crown
+https://assetstore.unity.com/packages/2d/textures-materials/sky/farland-skies-cloudy-crown-60004
+
+Low Poly Fantasy Medieval Village With Castle
+https://assetstore.unity.com/packages/3d/environments/fantasy/low-poly-fantasy-medieval-village-with-castle-240465
+
+Stylize Nature Pack
+https://assetstore.unity.com/packages/3d/vegetation/trees/stylize-nature-pack-252435
+
+Dragonfly Arrow Cute Series
+https://assetstore.unity.com/packages/3d/characters/animals/insects/dragonfly-arrow-cute-series-215297
+
+RPG Tiny Hero Duo PBR Polyart
+https://assetstore.unity.com/packages/3d/characters/humanoids/rpg-tiny-hero-duo-pbr-polyart-225148
+
+Scorpling Cute Series
+https://assetstore.unity.com/packages/3d/characters/animals/insects/scorpling-cute-series-189113
+
+Spider Cute Series
+https://assetstore.unity.com/packages/3d/characters/creatures/spider-cute-series-162923
+
+Stylized Little Hero -NPC(Basic)
+https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/stylized-little-hero-npc-basic-289306
+
+UI & Item Sound Effects 2
+https://assetstore.unity.com/packages/audio/sound-fx/ui-item-sound-effects-2-130792
+
+----------------------------------------------------------------------------------------------------------
+
+Sound Effects and Music
+=============================================================================================
+
+Most are public domain from OpenGameArt.Org, but some need credited for copyright.
+
+
+
+Forest - Made by Tarush Singhal (Prod. Faccio)
+
+
+Title:
+    I swear I saw it - background track
+
+Author:
+    yd
+
+URL:
+    https://opengameart.org/content/i-swear-i-saw-it-background-track
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+File(s):
+    * IswearIsawit.zip
+    * IswearIsawit.ogg
+
+----------------------------------------
+
+Programming Youtube Tutorials
+===================================================================
+
+Easy Heart Health System In Unity by BMo
+https://www.youtube.com/watch?v=5NViMw-ALAo
+
+Unity 3D Platformer by Git-Amend
+https://www.youtube.com/playlist?list=PLnJJ5frTPwRNdyRAD4oBtG1eUVBuj2h1O
+
+How to display FPS in your game in Unity? By Balint Benedek Toth
+https://www.youtube.com/watch?v=WWXV3cERak0&t=215s
+
+ADVANCED SWINGING in 9 MINUTES by Dave/ GameDevelopment
+https://www.youtube.com/watch?v=HPjuTK91MA8
+
+Setup your UI for navigation and use with keyboard and controller in Unity by Christina Creates Games
+https://www.youtube.com/watch?v=sQpjgcX-jH8&t=623s

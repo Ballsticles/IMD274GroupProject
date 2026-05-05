@@ -254,8 +254,9 @@ public class PlayerMotor : MonoBehaviour
         if (performed && !jumpTimer.IsRunning && !jumpCooldownTimer.IsRunning && (groundCheck.isGrounded || ledgeChecker.onLedge))
         {
             animator.SetTrigger("Jump");
-            jumpTimer.Start();
+            
             groundCheck.coyoteTimer.Stop();
+            jumpTimer.Start();
             movementAudio.PlayJump();
         }
         else if (!performed && jumpTimer.IsRunning || performed && jumpTimer.IsFinished)
@@ -379,16 +380,19 @@ public class PlayerMotor : MonoBehaviour
             
             transform.position = ledgeChecker.hangPos;
             transform.rotation = Quaternion.LookRotation(ledgeChecker.hangRot);
+            rb.isKinematic = true;
             rb.useGravity = false;
 
             if (jumpTimer.IsRunning)
             {
                 ledgeChecker.onLedge = false;
+                rb.isKinematic = false;
                 rb.useGravity = true;
             }
         }
         else
         {
+            rb.isKinematic = false;
             rb.useGravity = true;
             ledgeChecker.onLedge = false;
 

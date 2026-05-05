@@ -7,6 +7,7 @@ public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject titleMenu;
     [SerializeField] private GameObject levelsMenu;
+    [SerializeField] private GameObject optionsMenu;
     private bool loading = false;
 
 
@@ -17,16 +18,20 @@ public class MainMenuUI : MonoBehaviour
     {
         titleMenu.SetActive(true);
         levelsMenu.SetActive(false);
+        optionsMenu.SetActive(false);
     }
 
     public void OpenLevelsMenu()
     {
         titleMenu.SetActive(false);
         levelsMenu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
     public void OpenOptionsMenu()
     {
-        //nothing yet
+        titleMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        levelsMenu.SetActive(false);
     }
 
     public void QuitGame()
