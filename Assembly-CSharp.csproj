@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\CameraManager.cs" />
     <Compile Include="Assets\Scripts\StateMachine\ITransition.cs" />
+    <Compile Include="Assets\Scripts\FakePickup.cs" />
     <Compile Include="Assets\Scripts\LedgeChecker.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Movement\SwingState.cs" />
   </ItemGroup>
