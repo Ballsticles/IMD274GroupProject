@@ -11,9 +11,6 @@ public class MainMenuUI : MonoBehaviour
     private bool loading = false;
 
 
-
-
-
     public void OpenTitleMenu()
     {
         titleMenu.SetActive(true);
