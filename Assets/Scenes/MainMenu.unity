@@ -2233,6 +2233,10 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 1119370201}
+    - target: {fileID: 1188088500084537725, guid: 92dd347fd2c280947bdfc2605d7a8409, type: 3}
+      propertyPath: firstSelected
+      value: 
+      objectReference: {fileID: 2024767102}
     - target: {fileID: 1458640183638192946, guid: 92dd347fd2c280947bdfc2605d7a8409, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

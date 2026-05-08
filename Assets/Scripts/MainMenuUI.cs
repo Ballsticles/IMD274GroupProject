@@ -1,16 +1,24 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject titleMenu;
     [SerializeField] private GameObject levelsMenu;
     [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private Selectable firstSelected;
     private bool loading = false;
 
-
+    private void Awake()
+    {
+        loading = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        firstSelected.Select();
+    }
     public void OpenTitleMenu()
     {
         titleMenu.SetActive(true);
