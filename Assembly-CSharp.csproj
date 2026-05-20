@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\PlayerSpawnManager.cs" />
     <Compile Include="Assets\Scripts\HealthHeart.cs" />
     <Compile Include="Assets\Scripts\StateMachine\PlayerStates\Combat\OutCombatState.cs" />
+    <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\InputSystem\DeltaTimeProcessor.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\InputSystem\InputManager.cs" />
